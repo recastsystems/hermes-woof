@@ -1,0 +1,197 @@
+{
+ "allowlist": [
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "composite_reflectivity",
+   "title": "composite reflectivity"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "composite_reflectivity_uh",
+   "title": "composite reflectivity uh"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "1km_reflectivity",
+   "title": "1km reflectivity"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "2m_temperature",
+   "title": "2m temperature"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "2m_dewpoint",
+   "title": "2m dewpoint"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "2m_relative_humidity",
+   "title": "2m relative humidity"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "10m_wind_speed_and_direction",
+   "title": "10m wind speed and direction"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "mslp_10m_winds",
+   "title": "mslp 10m winds"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "total_qpf",
+   "title": "total qpf"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "low_cloud_cover",
+   "title": "low cloud cover"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "precipitable_water",
+   "title": "precipitable water"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "mlcape",
+   "title": "mlcape"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "mucape",
+   "title": "mucape"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "sbcape",
+   "title": "sbcape"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "mlcin",
+   "title": "mlcin"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "srh_0_1km",
+   "title": "srh 0 1km"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "srh_0_3km",
+   "title": "srh 0 3km"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "bulk_shear_0_6km",
+   "title": "bulk shear 0 6km"
+  },
+  {
+   "kind": "derived",
+   "minimum_hour": 0,
+   "name": "stp_fixed",
+   "title": "stp fixed"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "500mb_height_winds",
+   "title": "500hPa height winds"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "850mb_temperature_height_winds",
+   "title": "850hPa temperature height winds"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "250mb_height_winds",
+   "title": "250hPa height winds"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "2m_temperature_10m_winds",
+   "title": "2m temperature 10m winds"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "2m_dewpoint_10m_winds",
+   "title": "2m dewpoint 10m winds"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "uh_2to5km",
+   "title": "uh 2to5km"
+  },
+  {
+   "kind": "direct",
+   "minimum_hour": 0,
+   "name": "700mb_temperature_height_winds",
+   "title": "700hPa temperature height winds"
+  }
+ ],
+ "sets": {
+  "headline": [
+   "composite_reflectivity",
+   "2m_temperature",
+   "10m_wind_speed_and_direction",
+   "total_qpf"
+  ],
+  "severe": [
+   "composite_reflectivity",
+   "composite_reflectivity_uh",
+   "uh_2to5km",
+   "mlcape",
+   "mucape",
+   "sbcape",
+   "mlcin",
+   "srh_0_1km",
+   "srh_0_3km",
+   "bulk_shear_0_6km",
+   "stp_fixed"
+  ],
+  "surface": [
+   "2m_temperature",
+   "2m_dewpoint",
+   "2m_relative_humidity",
+   "10m_wind_speed_and_direction",
+   "mslp_10m_winds",
+   "total_qpf",
+   "low_cloud_cover"
+  ],
+  "upper": [
+   "250mb_height_winds",
+   "500mb_height_winds",
+   "700mb_temperature_height_winds",
+   "850mb_temperature_height_winds",
+   "precipitable_water"
+  ]
+ }
+}

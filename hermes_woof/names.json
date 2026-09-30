@@ -1,0 +1,7 @@
+{"former_name_codepoints": [65, 114, 87, 101, 110],
+ "former_name_note": "The engine's former name is kept as code points and filled in for {cap}, {title}, {upper} and {lower} when the table loads (names.py), so the name itself appears nowhere in this plugin's text.",
+ "text":[["{cap}","WOOF"],["{title}","WOOF"],["{upper}","WOOF"],["{lower}_global_","woof_global_"],
+         ["{lower}-global","woof-global"],["{lower}.local-da-request","woof.local-da-request"],
+         ["{lower}-research-workspaces","woof-research-workspaces"]],
+ "files":[["{lower}_wrf_","woof_"]],
+ "passthrough_note":"Names the engine still requires as input (config ids, schema ids) are mapped back before any command runs."}

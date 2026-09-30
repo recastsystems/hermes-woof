@@ -1,0 +1,964 @@
+{
+ "schema": "gpuwm.run-plan.sources.v1",
+ "sources": [
+  {
+   "coverage": {
+    "describe": "1799x1059 Lambert grid at 3000 m, truelat 38.5/38.5, stand_lon -97.5",
+    "east": -60.91719277183785,
+    "north": 52.61565330680791,
+    "south": 21.138122999999993,
+    "west": -134.09547973426317
+   },
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "HRRR (native hybrid levels)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "certified_stock_wrf"
+   },
+   "max_forecast_hour": 48,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:hrrr",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "hrrr",
+   "source_kind": "deterministic_state",
+   "title": "HRRR (native hybrid levels)"
+  },
+  {
+   "coverage": {
+    "describe": "1799x1059 Lambert grid at 3000 m, truelat 38.5/38.5, stand_lon -97.5",
+    "east": -60.91719277183785,
+    "north": 52.61565330680791,
+    "south": 21.138122999999993,
+    "west": -134.09547973426317
+   },
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "HRRR (pressure levels)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 48,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "hrrr-prs",
+   "source_kind": "deterministic_state",
+   "title": "HRRR (pressure levels)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "GEM GDPS (Canadian global)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 240,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "gem-gdps",
+   "source_kind": "deterministic_state",
+   "title": "GEM GDPS (Canadian global)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "ICON global 13 km (DWD)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 180,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "icon-global",
+   "source_kind": "deterministic_state",
+   "title": "ICON global 13 km (DWD)"
+  },
+  {
+   "coverage": {
+    "describe": "regular lat/lon window lat 29.5..70.5, lon -23.5..62.5",
+    "east": 62.5,
+    "north": 70.5,
+    "south": 29.5,
+    "west": -23.5
+   },
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "ICON-EU (DWD regional)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 120,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "icon-eu",
+   "source_kind": "deterministic_state",
+   "title": "ICON-EU (DWD regional)"
+  },
+  {
+   "coverage": {
+    "describe": "regular lat/lon window lat 44..57.3, lon 0..17.3",
+    "east": 17.3,
+    "north": 57.3,
+    "south": 44.0,
+    "west": 0.0
+   },
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "ICON-D2 2.2 km (DWD, Germany)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 48,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "icon-d2",
+   "source_kind": "deterministic_state",
+   "title": "ICON-D2 2.2 km (DWD, Germany)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "HRRR Alaska",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "adapter_mapping_required"
+   },
+   "max_forecast_hour": 48,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'hrrr-ak' declares no runnable implementation route (status 'adapter_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "hrrr-ak",
+   "source_kind": "deterministic_state",
+   "title": "HRRR Alaska"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "GFS (global, 0.25 degree)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "certified_stock_wrf"
+   },
+   "max_forecast_hour": 384,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:go",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "gfs",
+   "source_kind": "deterministic_state",
+   "title": "GFS (global, 0.25 degree)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "GDAS analysis (0.25 degree)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 9,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "gdas",
+   "source_kind": "deterministic_state",
+   "title": "GDAS analysis (0.25 degree)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "GEFS (global ensemble member)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 384,
+   "member_set": "gefs-ensemble-grib2-members-v1",
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "gefs",
+   "source_kind": "ensemble_members",
+   "title": "GEFS (global ensemble member)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "AIGFS (NOAA AI global forecast)",
+   "forcing_interval_seconds": 21600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 384,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "aigfs",
+   "source_kind": "deterministic_state",
+   "title": "AIGFS (NOAA AI global forecast)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "AIGEFS (NOAA AI global ensemble member)",
+   "forcing_interval_seconds": 21600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 384,
+   "member_set": "aigefs-ensemble-grib2-members-v1",
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "aigefs",
+   "source_kind": "ensemble_members",
+   "title": "AIGEFS (NOAA AI global ensemble member)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "Hybrid GEFS",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "member_selection_and_mapping_required"
+   },
+   "max_forecast_hour": 240,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'hgefs' declares no runnable implementation route (status 'member_selection_and_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "hgefs",
+   "source_kind": "ensemble_members",
+   "title": "Hybrid GEFS"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "ECMWF IFS (open data, 0.25 degree)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 360,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "ecmwf-open-data",
+   "source_kind": "deterministic_state",
+   "title": "ECMWF IFS (open data, 0.25 degree)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "ECMWF AIFS single (open data)",
+   "forcing_interval_seconds": 21600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 360,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "aifs",
+   "source_kind": "deterministic_state",
+   "title": "ECMWF AIFS single (open data)"
+  },
+  {
+   "coverage": {
+    "describe": "349x277 Lambert grid at 32463 m, truelat 50/50, stand_lon -107",
+    "east": 179.97900632602773,
+    "north": 85.33311425350938,
+    "south": 0.8975592208546459,
+    "west": -179.88535884726122
+   },
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "RAP (32 km North America)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 51,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "rap",
+   "source_kind": "deterministic_state",
+   "title": "RAP (32 km North America)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "NAM (12 km North America)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "adapter_mapping_required"
+   },
+   "max_forecast_hour": 84,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'nam' declares no runnable implementation route (status 'adapter_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "nam",
+   "source_kind": "deterministic_state",
+   "title": "NAM (12 km North America)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "HiResW (high-resolution window)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "member_selection_and_mapping_required"
+   },
+   "max_forecast_hour": 48,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'hiresw' declares no runnable implementation route (status 'member_selection_and_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "hiresw",
+   "source_kind": "ensemble_members",
+   "title": "HiResW (high-resolution window)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "HREF (high-resolution ensemble products)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 48,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'href' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "href",
+   "source_kind": "ensemble_statistic",
+   "title": "HREF (high-resolution ensemble products)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "SREF (short-range ensemble products)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 87,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'sref' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "sref",
+   "source_kind": "ensemble_statistic",
+   "title": "SREF (short-range ensemble products)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "RTMA (real-time mesoscale analysis)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'rtma' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "rtma",
+   "source_kind": "surface_analysis",
+   "title": "RTMA (real-time mesoscale analysis)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "URMA (unrestricted mesoscale analysis)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'urma' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "urma",
+   "source_kind": "surface_analysis",
+   "title": "URMA (unrestricted mesoscale analysis)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "NBM (National Blend of Models)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 264,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'nbm' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "nbm",
+   "source_kind": "postprocessed_guidance",
+   "title": "NBM (National Blend of Models)"
+  },
+  {
+   "coverage": {
+    "describe": "1799x1059 Lambert grid at 3000 m, truelat 38.5/38.5, stand_lon -97.5",
+    "east": -60.91719277183785,
+    "north": 52.61565330680791,
+    "south": 21.138122999999993,
+    "west": -134.09547973426317
+   },
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "RRFS (operational 3 km CONUS)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 84,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "rrfs",
+   "source_kind": "deterministic_state",
+   "title": "RRFS (operational 3 km CONUS)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "RRFS-A (frozen prototype feed)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "adapter_mapping_required"
+   },
+   "max_forecast_hour": 60,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'rrfs-a' declares no runnable implementation route (status 'adapter_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "rrfs-a",
+   "source_kind": "deterministic_state",
+   "title": "RRFS-A (frozen prototype feed)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "RRFS public prototype",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "adapter_mapping_required"
+   },
+   "max_forecast_hour": 60,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'rrfs-public' declares no runnable implementation route (status 'adapter_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "rrfs-public",
+   "source_kind": "deterministic_state",
+   "title": "RRFS public prototype"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "REFS (RRFS ensemble products)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 60,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'refs' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "refs",
+   "source_kind": "ensemble_statistic",
+   "title": "REFS (RRFS ensemble products)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "RRFS fire-weather nest",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "explicit_composition_required"
+   },
+   "max_forecast_hour": 36,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'rrfs-firewx' declares no runnable implementation route (status 'explicit_composition_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "rrfs-firewx",
+   "source_kind": "deterministic_state",
+   "title": "RRFS fire-weather nest"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "WRF archive (ARW history)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": false,
+    "status": "wrf_archive_mapping_required"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'wrf' declares no runnable implementation route (status 'wrf_archive_mapping_required'). Choose a runnable source from woof sources.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "wrf",
+   "source_kind": "wrf_archive",
+   "title": "WRF archive (ARW history)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": true,
+    "summary": "this registry row declares 1 credential: Copernicus CDS key (~/.cdsapirc), needed for acquisition"
+   },
+   "display_name": "ERA5 reanalysis (ECMWF)",
+   "forcing_interval_seconds": 21600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "certified_stock_wrf"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "experiment",
+    "intent_refusal": null,
+    "intent_routes": [
+     "experiment"
+    ],
+    "intent_supported": true,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "era5",
+   "source_kind": "deterministic_state",
+   "title": "ERA5 reanalysis (ECMWF)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": true,
+    "summary": "this registry row declares 1 credential: Copernicus CDS key (~/.cdsapirc), needed for acquisition"
+   },
+   "display_name": "ERA5 reanalysis (native 137 model levels)",
+   "forcing_interval_seconds": 3600.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": true,
+    "source_root_reason": "ERA5 model-level data is served by the Copernicus Climate Data Store as a queued MARS request (dataset reanalysis-era5-complete, levtype=ml, levelist=1/to/137), not as files at a predictable URL: there is no cycle-and-lead path for a fetch to resolve, and the request runs under your own CDS account. The pressure-level/single-level analysis this source borrows its land surface from does have a fetch door, `woof fetch --source era5 --retrieve`, which writes it into the same folder."
+   },
+   "source_id": "era5-l137",
+   "source_kind": "deterministic_state",
+   "title": "ERA5 reanalysis (native 137 model levels)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "20CRv3 reanalysis (member, GRIB2)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": true,
+    "source_root_reason": "the 20CRv3 every-member GRIB2 archive is not published on an anonymously readable public endpoint; only the ensemble-MEAN NetCDF distribution is, and a member state is not a mean."
+   },
+   "source_id": "20crv3",
+   "source_kind": "ensemble_members",
+   "title": "20CRv3 reanalysis (member, GRIB2)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "20CRv3 reanalysis (ensemble mean, NetCDF)",
+   "forcing_interval_seconds": 10800.0,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": "prepared:staged",
+    "intent_refusal": null,
+    "intent_routes": [
+     "prepared"
+    ],
+    "intent_supported": true,
+    "requires_source_root": true,
+    "source_root_reason": "the NOAA PSL 20CRv3 NetCDF distribution is a per-year, per-variable reanalysis archive with no cycle and no forecast lead, so --cycle/--hours describe nothing in it. It is also missing orography and a land mask entirely, which the packaged profile recovers with tools/build_pressure_level_invariant_supplement.py from files you already hold."
+   },
+   "source_id": "20crv3-cf",
+   "source_kind": "ensemble_statistic",
+   "title": "20CRv3 reanalysis (ensemble mean, NetCDF)"
+  },
+  {
+   "coverage": null,
+   "credentials": {
+    "required": false,
+    "summary": "this registry row declares no credential requirement"
+   },
+   "display_name": "Generic mapped source (rw-wps mapping v1)",
+   "forcing_interval_seconds": null,
+   "maturity": {
+    "runnable": true,
+    "status": "runnable_mapping_not_stock_wrf_certified"
+   },
+   "max_forecast_hour": 0,
+   "member_set": null,
+   "run_plan": {
+    "intent_chain": null,
+    "intent_refusal": "'mapped' declares no forcing_interval_seconds. Declare its boundary cadence before using woof domain.",
+    "intent_routes": [],
+    "intent_supported": false,
+    "requires_source_root": false,
+    "source_root_reason": null
+   },
+   "source_id": "mapped",
+   "source_kind": "deterministic_state",
+   "title": "Generic mapped source (rw-wps mapping v1)"
+  }
+ ],
+ "woof_version": "1.0.0"
+}

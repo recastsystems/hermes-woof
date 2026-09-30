@@ -1,0 +1,60 @@
+{
+  "schema": "hermes-woof.throughput.v1",
+  "basis": "WOOF forecast throughput measured on dated end-to-end runs: cell-steps per second, default suite (Morrison or Thompson microphysics, YSU, Noah, RTE+RRTMGP), 49 levels. A cell-step is one grid cell advanced one model step.",
+  "reference_card": "RTX 5090",
+  "reference_cell_steps_per_s": 83000000,
+  "reference_cell_steps_per_s_steady": 93000000,
+  "full_product_stack": {
+    "cell_steps_per_s": 28000000,
+    "note": "Thompson, MYNN, RUC, legacy RRTMG at 59 levels on the reference card. The gap to the default suite is split by measured share: MYNN 0.48, legacy RRTMG 0.19, RUC 0.16, the rest 0.17 when all three run together.",
+    "shares": {"mynn": 0.48, "rrtmg-legacy": 0.19, "ruc": 0.16, "all_three": 0.17}
+  },
+  "cards": {
+    "RTX 5090":      {"relative": 1.00,  "memory_gib": 32, "bandwidth_gbs": 1792, "measured": true},
+    "RTX PRO 6000":  {"relative": 1.01,  "memory_gib": 96, "bandwidth_gbs": 1792, "measured": true},
+    "RTX 4090":      {"relative": 0.743, "memory_gib": 24, "bandwidth_gbs": 1008, "measured": true},
+    "RTX PRO 4500":  {"relative": 0.54,  "memory_gib": 32, "bandwidth_gbs": 896,  "measured": true},
+    "L40S":          {"relative": 0.45,  "memory_gib": 48, "bandwidth_gbs": 864,  "measured": true}
+  },
+  "bandwidth_only": {
+    "note": "Cards with no WOOF measurement. They take the factor of the measured card nearest in memory bandwidth, and the estimate says confidence low.",
+    "H200": 4800, "H100": 3350, "B200": 8000, "A100": 2039, "RTX 6000 Ada": 960, "RTX A6000": 768,
+    "RTX 5080": 960, "RTX 5070 Ti": 896, "RTX 5070": 672, "RTX 5060 Ti": 448,
+    "RTX 4080": 717, "RTX 4070 Ti": 504, "RTX 4070": 504, "RTX 4060 Ti": 288,
+    "RTX 3090": 936, "RTX 3080": 760, "RTX 3070": 448, "RTX 3060": 360,
+    "L4": 300, "T4": 320, "A10": 600, "A40": 696, "V100": 900
+  },
+  "per_step_floor_s": {
+    "value": 0.017,
+    "card": "RTX 4090",
+    "note": "Small grids are launch bound: a 100 x 80 x 49 grid at 3 km ran 720 steps in 16.9 s on an RTX 4090, far above what its cell count alone predicts. The floor scales with the square root of the card factor."
+  },
+  "fixed_costs": {
+    "fetch_rate_bytes_per_s": 35000000,
+    "fetch_overhead_s": 5,
+    "fetch_note": "8 HRRR full files (4.2 GB) in 130 s, about 37 MB/s, from the public mirror.",
+    "prepare_reference_s": 38.8,
+    "prepare_reference_work": 32000,
+    "prepare_exponent": 0.6,
+    "prepare_note": "38.8 s for a 100 x 80 HRRR grid over 4 forcing times; scaled by (grid columns x forcing times) to the power 0.6, an assumption until this machine has its own runs.",
+    "compile_cold_s": 50,
+    "compile_note": "First run of a physics suite compiles its kernels (about 50 s); zero once warm or after woof warm-kernels.",
+    "initialize_s": 7,
+    "render_tail_base_s": 5,
+    "render_tail_per_product_s": 0.5,
+    "render_note": "Pictures are drawn while the forecast runs; only the last frame is drawn after it."
+  },
+  "global": {
+    "reference": "T255, 24 h, RTX 4090: 439 s whole run, 234 s integration, 10.7 GiB card; statics 874 s once per truncation on CPU",
+    "integration_s_24h_t255_4090": 234,
+    "overhead_s_t255": 205,
+    "statics_s_t255": 874
+  },
+  "hex": {
+    "reference": "x1.40962 mesh (40,962 cells), 1 h forecast in 241 s on an RTX PRO 4500 with 3.2 GB host memory"
+  },
+  "checks": [
+    {"case": "3 km HRRR, 100 x 80 x 49, 3 h, RTX 4090, cold download and kernel cache", "measured_s": 217},
+    {"case": "same grid, download and kernels warm", "measured_s": 62}
+  ]
+}

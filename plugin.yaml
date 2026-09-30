@@ -1,0 +1,23 @@
+name: woof
+version: 0.1.0
+manifest_version: 2
+api_version: 1
+description: Plan, launch, watch and compare WOOF weather simulations on your own NVIDIA GPU
+license: Apache-2.0
+homepage: https://github.com/recastsystems/hermes-woof
+tags: [weather, simulation, gpu, science, research]
+python_runtime: external
+provides_tools: [woof_doctor, woof_catalog, woof_docs, woof_plan, woof_launch, woof_status,
+                 woof_stop, woof_show, woof_compare, woof_campaign, woof_score, woof_report]
+provides_hooks: [pre_llm_call, post_llm_call, on_session_end]
+config_schema:
+  executor:        {type: str, default: "local", choices: [local, ssh, wsl], description: "local, ssh or wsl"}
+  ssh_host:        {type: str, default: "", description: "user@host of a Linux GPU box (executor ssh)"}
+  wsl_distro:      {type: str, default: "", description: "WSL2 distribution (executor wsl)"}
+  woof_bin:        {type: str, default: "", description: "Path to the woof command on the WOOF host; empty = search ~/woof-env/bin then PATH"}
+  runs_dir:        {type: str, default: "~/woof-runs", description: "Run folder on the WOOF host"}
+  images_to_model: {type: str, default: "on", choices: ["on", "off"], description: "on or off; off when the model cannot read images"}
+  lock_file:       {type: str, default: "", description: "Optional shared GPU lock file the runner must hold while a run uses the card"}
+  viewer_url:      {type: str, default: "", description: "Optional 3D viewer base URL"}
+  geog_root:       {type: str, default: "", description: "Existing WPS_GEOG geography folder on the WOOF host; empty = WOOF's own search"}
+  vram_reserve_gib: {type: str, default: "", description: "GiB of the card to leave free for something else; empty = measure local model servers on the card"}

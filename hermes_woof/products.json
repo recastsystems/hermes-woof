@@ -1,0 +1,213 @@
+{
+ "schema": "hermes-woof.products.v1",
+ "basis": "the seed list intersected with what WOOF's renderer draws from a WOOF run (run-plan --catalog, local_run), leaving out the catalog's optional expensive family",
+ "renderer_products": 333,
+ "drawable_from_a_run": 116,
+ "left_out_expensive": 16,
+ "not_drawable_from_a_run": [
+  "10m_wind_gusts",
+  "categorical_freezing_rain",
+  "categorical_snow",
+  "cloud_cover",
+  "fire_weather_composite",
+  "heat_index_2m",
+  "lifted_index",
+  "lightning_flash_density",
+  "scp_mu_0_3km_0_6km_proxy"
+ ],
+ "allowlist": [
+  {
+   "name": "composite_reflectivity",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "composite reflectivity"
+  },
+  {
+   "name": "composite_reflectivity_uh",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "composite reflectivity uh"
+  },
+  {
+   "name": "1km_reflectivity",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "1km reflectivity"
+  },
+  {
+   "name": "2m_temperature",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "2m temperature"
+  },
+  {
+   "name": "2m_dewpoint",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "2m dewpoint"
+  },
+  {
+   "name": "2m_relative_humidity",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "2m relative humidity"
+  },
+  {
+   "name": "10m_wind_speed_and_direction",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "10m wind speed and direction"
+  },
+  {
+   "name": "mslp_10m_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "mslp 10m winds"
+  },
+  {
+   "name": "total_qpf",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "total qpf"
+  },
+  {
+   "name": "low_cloud_cover",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "low cloud cover"
+  },
+  {
+   "name": "precipitable_water",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "precipitable water"
+  },
+  {
+   "name": "mlcape",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "mlcape"
+  },
+  {
+   "name": "mucape",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "mucape"
+  },
+  {
+   "name": "sbcape",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "sbcape"
+  },
+  {
+   "name": "mlcin",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "mlcin"
+  },
+  {
+   "name": "srh_0_1km",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "srh 0 1km"
+  },
+  {
+   "name": "srh_0_3km",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "srh 0 3km"
+  },
+  {
+   "name": "bulk_shear_0_6km",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "bulk shear 0 6km"
+  },
+  {
+   "name": "stp_fixed",
+   "kind": "derived",
+   "minimum_hour": 0,
+   "title": "stp fixed"
+  },
+  {
+   "name": "500mb_height_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "500hPa height winds"
+  },
+  {
+   "name": "850mb_temperature_height_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "850hPa temperature height winds"
+  },
+  {
+   "name": "250mb_height_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "250hPa height winds"
+  },
+  {
+   "name": "2m_temperature_10m_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "2m temperature 10m winds"
+  },
+  {
+   "name": "2m_dewpoint_10m_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "2m dewpoint 10m winds"
+  },
+  {
+   "name": "uh_2to5km",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "uh 2to5km"
+  },
+  {
+   "name": "700mb_temperature_height_winds",
+   "kind": "direct",
+   "minimum_hour": 0,
+   "title": "700hPa temperature height winds"
+  }
+ ],
+ "sets": {
+  "headline": [
+   "composite_reflectivity",
+   "2m_temperature",
+   "10m_wind_speed_and_direction",
+   "total_qpf"
+  ],
+  "severe": [
+   "composite_reflectivity",
+   "composite_reflectivity_uh",
+   "uh_2to5km",
+   "mlcape",
+   "mucape",
+   "sbcape",
+   "mlcin",
+   "srh_0_1km",
+   "srh_0_3km",
+   "bulk_shear_0_6km",
+   "stp_fixed"
+  ],
+  "surface": [
+   "2m_temperature",
+   "2m_dewpoint",
+   "2m_relative_humidity",
+   "10m_wind_speed_and_direction",
+   "mslp_10m_winds",
+   "total_qpf",
+   "low_cloud_cover"
+  ],
+  "upper": [
+   "250mb_height_winds",
+   "500mb_height_winds",
+   "700mb_temperature_height_winds",
+   "850mb_temperature_height_winds",
+   "precipitable_water"
+  ]
+ }
+}

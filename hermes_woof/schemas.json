@@ -1,0 +1,140 @@
+[
+ {"name":"woof_doctor",
+  "description":"Check this machine for WOOF: GPUs and free memory, WOOF install and version, whether runs can launch here or only be planned, and the command that fixes each gap. Call first in a new conversation about simulations.",
+  "parameters":{"type":"object","properties":{
+    "deep":{"type":"boolean","default":false,"description":"Also run the full engine self-check (uses the GPU; refused while a run is active)."}
+  }}},
+
+ {"name":"woof_catalog",
+  "description":"List WOOF's live choices: start-data sources, physics suites and mixes, plot products, presets, historical cases, research recipes, global configurations, observation types. Use before choosing any option so every name is real.",
+  "parameters":{"type":"object","required":["kind"],"properties":{
+    "kind":{"type":"string","enum":["sources","physics","profiles","products","presets","cases","recipes","global_configs","observations"]},
+    "query":{"type":"string","description":"Free-text filter, for example 'tornado 2013' for cases."},
+    "id":{"type":"string","description":"One entry to show in full (case id, recipe id, source id, suite id)."},
+    "source":{"type":"string"},
+    "cycle":{"type":"string","description":"With kind=sources and source: is this cycle (YYYY-MM-DDTHH or latest) available."},
+    "check":{"type":"object","description":"With kind=physics: a mix such as {\"microphysics\":\"thompson-mp8\",\"pbl\":\"mynn\"}; returns whether it runs and the nearest mixes that do."},
+    "limit":{"type":"integer","default":20,"minimum":1,"maximum":100}
+  }}},
+
+ {"name":"woof_docs",
+  "description":"Search WOOF's documentation and return the most relevant passages. Use for how-to, option meanings, limits and science background.",
+  "parameters":{"type":"object","required":["query"],"properties":{
+    "query":{"type":"string"},
+    "k":{"type":"integer","default":4,"minimum":1,"maximum":10}
+  }}},
+
+ {"name":"woof_plan",
+  "description":"Design one simulation and check it before anything runs: builds the run from a place and settings (or a preset, case or recipe), sizes the grid to the GPU, and returns the grid, memory fit, download, disk, frames and an estimated wall time. Always call before woof_launch. A refusal is a valid answer: explain it and offer the nearest plan that fits.",
+  "parameters":{"type":"object","properties":{
+    "model":{"type":"string","enum":["regional","hex","global"],"default":"regional"},
+    "preset":{"type":"string","description":"Preset id from woof_catalog kind=presets."},
+    "case_id":{"type":"string"},
+    "case_tier":{"type":"string","enum":["lower","recommended","upper"],"default":"recommended"},
+    "recipe_id":{"type":"string"},
+    "global_config":{"type":"string"},
+    "intent":{"type":"object","properties":{
+      "point":{"type":"string","description":"lat,lon"},
+      "polygon":{"type":"object","description":"GeoJSON Polygon"},
+      "buffer_km":{"type":"array","items":{"type":"number"}},
+      "extent_km":{"type":"number"},
+      "root_dx_km":{"type":"number","minimum":0.05,"maximum":200},
+      "chain":{"type":"array","items":{"type":"integer","minimum":2,"maximum":8}},
+      "ladder":{"type":"string","enum":["12","12-3","12-3-1","12-3-1-0.5","auto"]},
+      "nz":{"type":"integer"},
+      "hours":{"type":"number","exclusiveMinimum":0},
+      "source":{"type":"string"},
+      "cycle":{"type":"string","description":"latest or YYYY-MM-DDTHH"},
+      "forecast_start_hour":{"type":"integer","minimum":0},
+      "member":{"type":"integer","minimum":0},
+      "physics_profile":{"type":"string"},
+      "physics_choices":{"type":"object"},
+      "history_interval_s":{"type":"number","exclusiveMinimum":0,"description":"Root domain output interval in seconds (default 3600)."},
+      "nest_history_interval_s":{"type":"number","exclusiveMinimum":0,"description":"Every nest's output interval in seconds (default 900)."},
+      "name":{"type":"string"}
+    }},
+    "card":{"type":"string","description":"Target GPU when not this machine's, for example '24gb' or 'RTX 4090'."},
+    "products":{"type":"array","items":{"type":"string"},"description":"Plot products or a set name (headline, severe, surface, upper)."},
+    "section":{"type":"string","description":"Cross-section endpoints lat,lon,lat,lon."}
+  }}},
+
+ {"name":"woof_launch",
+  "description":"Start a planned run on this machine's GPU. Returns at once with a run id; a message arrives in the chat when the first pictures are ready and when the run ends, so do not poll.",
+  "parameters":{"type":"object","required":["plan_id"],"properties":{
+    "plan_id":{"type":"string"},
+    "label":{"type":"string"},
+    "device":{"type":"string","description":"GPU index or UUID on multi-GPU machines."}
+  }}},
+
+ {"name":"woof_status",
+  "description":"State of one run (or all runs when run_id is omitted): stage, progress, speed, time left, frames ready, error and remedy.",
+  "parameters":{"type":"object","properties":{
+    "run_id":{"type":"string"},
+    "events":{"type":"integer","default":5,"minimum":0,"maximum":50}
+  }}},
+
+ {"name":"woof_stop",
+  "description":"Stop a run this plugin started. Needs confirm=true.",
+  "parameters":{"type":"object","required":["run_id","confirm"],"properties":{
+    "run_id":{"type":"string"},
+    "confirm":{"type":"boolean"}
+  }}},
+
+ {"name":"woof_show",
+  "description":"Show a run's weather maps. The images come back to you so you can describe them; copy the MEDIA lines from the result into your reply so the user sees them too.",
+  "parameters":{"type":"object","required":["run_id"],"properties":{
+    "run_id":{"type":"string"},
+    "products":{"type":"array","items":{"type":"string"}},
+    "valid_time":{"type":"string","default":"latest","description":"latest, all, fNNN or an ISO time."},
+    "domain":{"type":"string"},
+    "section":{"type":"string","description":"lat,lon,lat,lon for a cross-section."},
+    "max_images":{"type":"integer","default":4,"minimum":1,"maximum":8}
+  }}},
+
+ {"name":"woof_compare",
+  "description":"Compare two runs product by product: difference maps when the grids match, side-by-side sheets otherwise.",
+  "parameters":{"type":"object","required":["run_a","run_b"],"properties":{
+    "run_a":{"type":"string"},
+    "run_b":{"type":"string"},
+    "products":{"type":"array","items":{"type":"string"}},
+    "valid_time":{"type":"string","default":"latest"},
+    "mode":{"type":"string","enum":["auto","diff","pair"],"default":"auto"},
+    "max_images":{"type":"integer","default":4,"minimum":1,"maximum":8}
+  }}},
+
+ {"name":"woof_campaign",
+  "description":"Plan and run a set of related simulations that answer one question: a physics, resolution, source, ensemble-member, date, lead-time or case sweep. plan prices every arm and the total against a budget; start queues them; status and stop manage it.",
+  "parameters":{"type":"object","required":["action"],"properties":{
+    "action":{"type":"string","enum":["plan","start","status","stop"]},
+    "campaign_id":{"type":"string"},
+    "spec":{"type":"object","properties":{
+      "name":{"type":"string"},
+      "question":{"type":"string"},
+      "base":{"type":"object","description":"Same fields as woof_plan."},
+      "axis":{"type":"string","enum":["physics","resolution","source","members","dates","lead","cases"]},
+      "values":{"type":"array"},
+      "compare_products":{"type":"array","items":{"type":"string"}},
+      "score":{"type":"boolean","default":false}
+    }},
+    "budget":{"type":"object","properties":{
+      "max_wall_minutes":{"type":"number"},
+      "max_disk_gib":{"type":"number"}
+    }},
+    "confirm":{"type":"boolean","description":"Required true for stop."}
+  }}},
+
+ {"name":"woof_score",
+  "description":"Score a finished run against observations (ASOS surface stations, MRMS radar, Stage-IV rainfall). Runs in the background and posts a message when done.",
+  "parameters":{"type":"object","required":["run_id"],"properties":{
+    "run_id":{"type":"string"},
+    "against":{"type":"array","items":{"type":"string","enum":["asos","mrms","stage4"]},"default":["asos","mrms","stage4"]}
+  }}},
+
+ {"name":"woof_report",
+  "description":"Summarise a finished run or campaign: setup, estimated vs actual time, health checks, scores and the key maps.",
+  "parameters":{"type":"object","properties":{
+    "run_id":{"type":"string"},
+    "campaign_id":{"type":"string"},
+    "include_images":{"type":"boolean","default":true}
+  }}}
+]

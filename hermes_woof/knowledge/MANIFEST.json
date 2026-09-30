@@ -1,0 +1,325 @@
+{
+ "built_at": "2026-09-30T02:10:13Z",
+ "catalog_doors_sha256": {
+  "cases": "e48eea56ec640aab19ada6c58ec4bd6d49eec747b70a379840989409a771a306",
+  "catalog": "428346e41383246f2c7538b60717346397099aecb5879321a825ee866c9c1b0c",
+  "global_configs": "6f20fccef86aa10888d82e02887dd678f37c93de081fdbbb19e7d7c1e5fec1ba",
+  "physics": "f4b71831fb4101700bb373326c51b5ae8150a37a5f55367328658d5a3efd3394",
+  "profiles": "9ecf1798d2d2aed9b77f9e99303b151b773ccda72d2c0a7b1432a83483222073",
+  "recipes": "9b10d16a184d484ec37a74dc0cb3a92f0387b0d9c699886ce7fd55001880334a",
+  "sources": "4ce17f9d2d08946af29e82eae43b3e15bd5274a47ee5aa25767a6b4ab110b089"
+ },
+ "chunks": 790,
+ "doc_cleaning": {
+  "CASE_CATALOG.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "CLI-OPTIONS.md": {
+   "dropped": 2,
+   "reworded": 0
+  },
+  "CLI-USER-MANUAL.md": {
+   "dropped": 4,
+   "reworded": 0
+  },
+  "CONFIGURATION.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "CYCLONE-SETUP.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "DATA.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "DOWNSCALE.md": {
+   "dropped": 7,
+   "reworded": 0
+  },
+  "FIRST-LIGHT.md": {
+   "dropped": 3,
+   "reworded": 0
+  },
+  "GLOSSARY.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "GRAYZONE-NEST.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "HARDWARE.md": {
+   "dropped": 15,
+   "reworded": 0
+  },
+  "HIGHRES-TERRAIN.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "LES.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "OUTPUT-VARIABLES.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "PHYSICS.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "PROGRESS.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "REPORTING-A-PROBLEM.md": {
+   "dropped": 4,
+   "reworded": 0
+  },
+  "RESEARCH-WORKSPACES.md": {
+   "dropped": 2,
+   "reworded": 0
+  },
+  "SOURCES.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "STREAMING.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "TILES.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "VERIFICATION.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "WITHOUT-A-GPU.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "globe/CLI-REFERENCE.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "globe/README.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "globe/WOOF_GLOBAL.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "globe/WOOF_GLOBAL_QUICKSTART.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/README.md": {
+   "dropped": 0,
+   "reworded": 1
+  },
+  "hex/hex-point-hrrr.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "hex/manual/01-what-this-is.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/manual/02-quickstart.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/manual/03-concepts.md": {
+   "dropped": 0,
+   "reworded": 1
+  },
+  "hex/manual/04-meshes-and-static.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/manual/05-initial-conditions.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/manual/06-forecast.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/manual/07-render.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "hex/manual/08-troubleshooting.md": {
+   "dropped": 0,
+   "reworded": 1
+  },
+  "hex/manual/09-reference.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/manual/index.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "hex/source-matrix.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "integration-kit/README.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "integration-kit/integration-guide.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "manual/01-WOOF-and-wrf.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "manual/02-dynamics-grids-nesting.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "manual/03-physics.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "manual/04-gpu-numerics.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "manual/05-initialization.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "manual/06-pipeline.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "manual/07-verification.md": {
+   "dropped": 2,
+   "reworded": 0
+  },
+  "manual/08-operational-envelope.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "manual/09-limits-and-roadmap.md": {
+   "dropped": 0,
+   "reworded": 0
+  },
+  "render-output-layout.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "run-output-folders.md": {
+   "dropped": 1,
+   "reworded": 0
+  },
+  "run-plan.md": {
+   "dropped": 1,
+   "reworded": 0
+  }
+ },
+ "docs": 54,
+ "docs_source": {
+  "kind": "tar",
+  "name": "woof-docs-ee21e5d3.tar.gz"
+ },
+ "inputs_sha256": {
+  "CASE_CATALOG.md": "0ab7fe901f07a7e70d9e269646ed8c27abf2ebd930db7578ff9912164d1e1f09",
+  "CLI-OPTIONS.md": "e864ca4428205c39ae0305189e8699abbf0791605367d7a881b5fe15a5dab9b1",
+  "CLI-USER-MANUAL.md": "54cf68b1924a5f9965a74af02be30808c79332963c1a60d8e3962a2b9b1a31c2",
+  "CONFIGURATION.md": "9be87c684f0ea47508d5fe54f4f5d196eff60904ccb49e0bfef8514350834d18",
+  "CYCLONE-SETUP.md": "37d1c1b79176ac53e84cfaedfb30ac104c823e8e4e83bcc5ee0c2ed31933bd68",
+  "DATA.md": "9557554d0e84b8c8a4bc9ae67f0d2a789b1018b11cf1b5a06a07542a8b47115f",
+  "DOWNSCALE.md": "8d1898d245f69b4c4b9904a9bb390729316e3e85bd0fa835f2c84627b87c73c3",
+  "FIRST-LIGHT.md": "14a734272e9a6d2c00cf065ed307a19f1ace0cb3e50e95bfb56a0d54aee6c6b9",
+  "GLOSSARY.md": "17f296c43f506070f69ab830a89ae8686c24d0fe921c6e0bc20dcb29e11b87f5",
+  "GRAYZONE-NEST.md": "3c830e0c746f0085ac1895f3c9866433ce6a3fb76f7ab9da6f279ff8ca2ee4d9",
+  "HARDWARE.md": "c47acf42043c699b19fce03278c8e0101d5d80baec62475b04ee308f5384b092",
+  "HIGHRES-TERRAIN.md": "ff4c73f24e5fd8461537ed144efd4e5d648efb33e3bf01be35bf18490eddb1b8",
+  "LES.md": "abc62ba8d48a56fd2bebc1e94a04cd18d334debf1f00e374ebd4118daf7027bf",
+  "OUTPUT-VARIABLES.md": "ea43b78b3a1f3cc11d18d1a099f4197b69db94d6927cb67385a6e6b1f94cc2ad",
+  "PHYSICS.md": "6f365bdbf9f9372de4ab5505d095ccc03b4bd2f184f3f9cae439a19dfc454024",
+  "PROGRESS.md": "7c6e4cbec1c6f1a62f83336a248bb68f572749cbc4c6a00f8c340f40c02408ca",
+  "REPORTING-A-PROBLEM.md": "ad3f9e4cdb4a1a6f730f120e55be4048dfb5e0ab8e890aa224de80d7ac339b32",
+  "RESEARCH-WORKSPACES.md": "d2fadde6d367deeb421a5fa7b7ecf4c2a8af01dee41cc74a53542a80ebb52b1a",
+  "SOURCES.md": "3e01bb516ac7175f37e9cdde624312804691e6cdf834e739891ce14fd9efa78d",
+  "STREAMING.md": "46c70f5fc80dd672cc9b8454626a742fb07bdde545f61984972bebf6c4f86786",
+  "TILES.md": "8307558f2db3e49127fa6e36c0f47ed52649e091fe079704407557963613dc1d",
+  "VERIFICATION.md": "6dc47178645523b2010564201d5f3a42a05c55663062af7f08e947c806dc3c68",
+  "WITHOUT-A-GPU.md": "92ceac9eb0f14ce815839ba771180035e7f95a75fe4e5d1150a126c901a3818a",
+  "globe/CLI-REFERENCE.md": "21a7655d318d5685e706f3236795e20d216d2685bd21e42b8b560fb282a8d694",
+  "globe/README.md": "61b2b55d2527cb236f869f1c8e680890852832c7fec256f7fe41d0bd990208bb",
+  "globe/WOOF_GLOBAL.md": "89dd7acda919876b4ac0a774d5f9a2c72adca16df053b00ab7621862a7c3e3aa",
+  "globe/WOOF_GLOBAL_QUICKSTART.md": "4b29059d72aeceabc66dc5cd94f809a7507af5ef3300d678c9ba26af7ef1a25b",
+  "hex/README.md": "5c3b26fb33a1d55c0eb0bd983a6f76293156203eec17f26b503d4017e315e51c",
+  "hex/hex-point-hrrr.md": "67231804b901e3148471561be1a78c8f1d7f576f88719c9545cb1315def74734",
+  "hex/manual/01-what-this-is.md": "a3aeb2f5c58bd00ceb7325b29faf720fb4698dc78fdf8a49eb6939a28cccbefc",
+  "hex/manual/02-quickstart.md": "223f2c697a7dec84e04f1a10e061075c4cffcfffb6ba8fc7e941b614156bcd8c",
+  "hex/manual/03-concepts.md": "9963a5ca9856213e92c9f1eed8d3ef02b35ba4f8e6e726592df8be008700f329",
+  "hex/manual/04-meshes-and-static.md": "29eda482557a14dd23bd2c7769450e06644a5f09877cb77cba5100b937f10726",
+  "hex/manual/05-initial-conditions.md": "8875f6fb5d18b620c0c9746e6b03ea2e6100841ea06de77a80f0aed5dccd8f3a",
+  "hex/manual/06-forecast.md": "f38b10e6511a11c8fa8f5c57fa0b9004f05a055cc4f246529ee555f27d7ad7fa",
+  "hex/manual/07-render.md": "a566ecd22a4ecde1b4edbabecc8d7ff8345d11b21f997347663ab3a8db40bad8",
+  "hex/manual/08-troubleshooting.md": "b958cf759db9ca19424e7f6f475c1504502136045249e3264433a040be37a78f",
+  "hex/manual/09-reference.md": "c7649e2f5240648b700777f89de4815f95cfe5147ed9f9dc3fbe802afbe93a57",
+  "hex/manual/index.md": "239084a3e7f7f246e0b62c7e5f34161c8eefe3ef81991ec8d03ef147122e51d0",
+  "hex/source-matrix.md": "c27568236a740c9f8eac85408106c84d517156ff361f8003e0bfe0d36aeae830",
+  "integration-kit/README.md": "d2ceec765bb277d1cbabf09e07be8aebeb455e2d47943317a9eac3ff356aec7d",
+  "integration-kit/integration-guide.md": "7ae0c9d584d7e9d076c1b956c756a99abd3ac57b72cb2f2be7b1a6b519a1e556",
+  "manual/01-WOOF-and-wrf.md": "e094a3762c478d42a1ba773e20d95bd2d7b91c2330d6c78ccdaaef07173c7ba5",
+  "manual/02-dynamics-grids-nesting.md": "c7e8d85123108431cbf19ec37535363c384c0ea943238ba11a27ca421e0d5ffd",
+  "manual/03-physics.md": "b4c06e6a2706784ddbf0f89608a457ba1b9609bed12a6e09d09bb68c7ed62e52",
+  "manual/04-gpu-numerics.md": "a3389d6cde6dfbe685936bbfc280cd264378742e951401c3be7c366a22b661a1",
+  "manual/05-initialization.md": "2ad4e4f2d8d62fb1205dfcf898da43895247e02ed8053f315ffe36ef3812dcac",
+  "manual/06-pipeline.md": "4f24459ad32ef51932da478bda2151d229f48b07c27f8b832b0f7c11db198b2e",
+  "manual/07-verification.md": "bcedeba4557f127842916784c468d7b3c4f8a2e9b73dc4a078c25231c8d5333d",
+  "manual/08-operational-envelope.md": "a82e305fbbb7109383a73629b089782d9b88a9d353acb02fac7397f7566bea82",
+  "manual/09-limits-and-roadmap.md": "a8213a9a8a60aae231ed2a589af6b0739441eeb68522b59fe9a7280615fb0626",
+  "render-output-layout.md": "ec929f7e4279a89e3e5fabf881964db3558ee9f049b4419c0cb8a1bbf2333bb1",
+  "run-output-folders.md": "72df8b33ecb8a97e79e40edebd3f7475553fe0c981be5ac6d44832a21ca1aa5e",
+  "run-plan.md": "d3c2770f70c0648de4bd7088fbea034753b6f7d80dfc1a61723ae56be18086fc"
+ },
+ "outputs_sha256": {
+  "hermes_woof/knowledge/catalogs/cases.json": "5e411db27ab5f1d370ec2318e8f522accfe17bcc7f6b774446b9fef195ddc252",
+  "hermes_woof/knowledge/catalogs/global_configs.json": "166b233712161567e5501ff5c867e8b45525a8e52da3d12abbee271da838d3e3",
+  "hermes_woof/knowledge/catalogs/physics.json": "3eb86c3e627fc1856d3bc77bc94290b2069138db30fa33c715c69578fc3577d7",
+  "hermes_woof/knowledge/catalogs/products.json": "729625588d0696612739c20822f05fff6b804874283c44adf7ef8b366db30a06",
+  "hermes_woof/knowledge/catalogs/profiles.json": "242ae9a8c4f9a23a13f062b6df1a800deb1c3ba17d99e59d75c74ed94bf4c250",
+  "hermes_woof/knowledge/catalogs/recipes.json": "35cea9fc628f5780c0d8a6db0442fdf7d5f0c98b0a252e5b0da94bfdbc50c153",
+  "hermes_woof/knowledge/catalogs/sources.json": "cb3b231e6f10e950295f78baa8c74439d7aad0629bf19e45fc2f19d7ada24663",
+  "hermes_woof/knowledge/index.json": "b87555d72311de1a3a230542b8f4e4092fbb92598eb655d9ebde085a25e80bf5",
+  "hermes_woof/products.json": "4fe8628d4f96b44243a7dd020ae2853239f26cdf23639295e7dd6f24a4eec561",
+  "skills/woof/references/campaigns.md": "985d03a79771249e03412a77fa7bc8aea359939cae3f6743bc1b81a3c6f9edfd",
+  "skills/woof/references/cards-and-time.md": "febc4beb4b9d987ef7cdfb0ca49672a5052b54c0c0449d09118563a3351ec6d8",
+  "skills/woof/references/outputs.md": "a0fb8e05407f8a745eac0a7d113099f4c388f75cc36c11a4840e2d2fc3016399",
+  "skills/woof/references/physics.md": "2c7a58cb788f52f177bfd752366c8174f5669a212cb266ff7fd2fb932d31fc07",
+  "skills/woof/references/research.md": "b88999b61206bd7b8b732dc1481f41241952f868d226c246f98321ab018894fe",
+  "skills/woof/references/run-plan.md": "7f90babe3fafb72f01a858de7a987e91fd0cbcfe963834b0aa47d16ecbbcc514",
+  "skills/woof/references/sources.md": "2702e8be7323ac11444c25857aaf8bcfd10d945727fe69d59f22145214534aa7",
+  "skills/woof/references/troubleshooting.md": "a9c899285758871434f78d60b859a621af72ce4dbdbaad1321f2cc659347bc9e",
+  "skills/woof/references/verification.md": "ad901bc36e4e71fb6caa4b2eebc05918394301460efc463a04d1890ce25acc50",
+  "skills/woof/references/without-a-gpu.md": "95d08e4ae78c4cfb82168e50be2f6b094efc895352c398750b4e3b3f5f367024"
+ },
+ "schema": "hermes-woof.knowledge-manifest.v1",
+ "sdist_cross_check": {
+  "compared": 5,
+  "differ": [],
+  "docs_in_sdist": 45,
+  "identical": 5,
+  "sdist": "recast_woof-1.0.0.tar.gz",
+  "sdist_sha256": "1fcfd1d5f2ee7cfe451198cba3b1d0a6eae98f9726f8ca44a9a80a74c52a01df"
+ },
+ "woof_source_commit": "ee21e5d3",
+ "woof_source_commit_full": "ee21e5d3896bd6e10e3f461d9563921fc149d49f",
+ "woof_version": "1.0.0"
+}

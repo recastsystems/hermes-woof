@@ -1,0 +1,1284 @@
+{
+ "default_suite": "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+ "families": [
+  {
+   "id": "microphysics",
+   "schemes": [
+    {
+     "choice": "kessler-mp1",
+     "description": "Warm rain only: cloud water and rain, no ice. For tests, not real forecasts.",
+     "implemented": true,
+     "label": "Kessler warm rain / MP1",
+     "maturity": "supported",
+     "suites": [
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1"
+     ]
+    },
+    {
+     "choice": "milbrandt2mom-mp9",
+     "description": "Two-moment scheme with separate graupel and hail, predicting mass and number of each.",
+     "implemented": true,
+     "label": "Milbrandt-Yau two-moment / MP9",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1"
+     ]
+    },
+    {
+     "choice": "morrison-mp10",
+     "description": "Two-moment ice, snow, rain and graupel, predicting mass and number.",
+     "implemented": true,
+     "label": "Morrison two-moment / MP10",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "nssl2-mp18",
+     "description": "Two-moment scheme with graupel and hail volume, built for supercells and hail.",
+     "implemented": true,
+     "label": "NSSL-2 / MP18",
+     "maturity": "wrf-matched-run-candidate",
+     "suites": [
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1"
+     ]
+    },
+    {
+     "choice": "off",
+     "description": "No cloud or precipitation physics.",
+     "implemented": true,
+     "label": "No microphysics",
+     "maturity": "supported",
+     "suites": []
+    },
+    {
+     "choice": "p3-mp50",
+     "description": "One free ice category whose rime and density evolve, instead of fixed snow, graupel and hail classes.",
+     "implemented": true,
+     "label": "P3 one-category / MP50",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1"
+     ]
+    },
+    {
+     "choice": "sase",
+     "description": "SASE microphysics. Registered as a plan; not in WOOF yet.",
+     "implemented": false,
+     "label": "SASE microphysics",
+     "maturity": "planned",
+     "suites": []
+    },
+    {
+     "choice": "thompson-aerosol-mp28",
+     "description": "Thompson with water- and ice-friendly aerosol setting droplet and ice numbers.",
+     "implemented": true,
+     "label": "Thompson aerosol-aware / MP28",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "thompson-mp8",
+     "description": "Snow and graupel by mass, rain and cloud ice by mass and number; common for winter precipitation.",
+     "implemented": true,
+     "label": "Thompson / MP8",
+     "maturity": "wrf-matched-run",
+     "suites": [
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1"
+     ]
+    },
+    {
+     "choice": "wdm6-mp16",
+     "description": "WSM6 ice with two-moment warm rain and cloud condensation nuclei.",
+     "implemented": true,
+     "label": "WDM6 double-moment warm rain / MP16",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "wsm6-mp6",
+     "description": "Single-moment six classes: vapour, cloud, rain, ice, snow, graupel.",
+     "implemented": true,
+     "label": "WSM6 / MP6",
+     "maturity": "supported",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-pbl-off-mm5-noah-constant-k-v1",
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    }
+   ],
+   "what": "Clouds and precipitation: how water vapour becomes cloud, rain, snow, graupel and hail."
+  },
+  {
+   "id": "cumulus",
+   "schemes": [
+    {
+     "choice": "grell-freitas",
+     "description": "Scale-aware ensemble convection that tapers itself off as the grid resolves storms.",
+     "implemented": true,
+     "label": "Grell-Freitas",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "kain-fritsch",
+     "description": "Deep and shallow convection by mass flux, for grids coarser than about 4 km.",
+     "implemented": true,
+     "label": "Kain-Fritsch",
+     "maturity": "supported",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "new-tiedtke",
+     "description": "Mass-flux convection with deep, shallow and mid-level arms.",
+     "implemented": true,
+     "label": "New Tiedtke",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1"
+     ]
+    },
+    {
+     "choice": "off",
+     "description": "No convection scheme: the grid makes its own storms. The usual choice below about 4 km.",
+     "implemented": true,
+     "label": "Cumulus off",
+     "maturity": "supported",
+     "suites": [
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1",
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-pbl-off-mm5-noah-constant-k-v1",
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    }
+   ],
+   "what": "Convection too small for the grid to make itself."
+  },
+  {
+   "id": "pbl",
+   "schemes": [
+    {
+     "choice": "myj",
+     "description": "Local turbulent-energy boundary layer (Mellor-Yamada-Janjic). Needs the Eta surface layer.",
+     "implemented": true,
+     "label": "MYJ PBL",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "mynn",
+     "description": "Turbulent-energy boundary layer with mass flux, strong in stable nights and shallow cloud.",
+     "implemented": true,
+     "label": "MYNN PBL",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1"
+     ]
+    },
+    {
+     "choice": "off",
+     "description": "No boundary-layer scheme. Pair with a 3-D turbulence closure below about 1 km.",
+     "implemented": true,
+     "label": "PBL off",
+     "maturity": "supported",
+     "suites": [
+      "wsm6-pbl-off-mm5-noah-constant-k-v1",
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1"
+     ]
+    },
+    {
+     "choice": "sase",
+     "description": "WOOF's own scale-adaptive closure, experimental and not a WRF scheme.",
+     "implemented": true,
+     "label": "SASE PBL",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1"
+     ]
+    },
+    {
+     "choice": "shinhong",
+     "description": "Scale-aware YSU for grids between about 0.5 and 4 km.",
+     "implemented": true,
+     "label": "Shin-Hong PBL",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1"
+     ]
+    },
+    {
+     "choice": "ysu",
+     "description": "Nonlocal boundary layer from Yonsei University; the common default.",
+     "implemented": true,
+     "label": "YSU PBL",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1",
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1",
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    }
+   ],
+   "what": "Mixing of heat, moisture and wind in the lowest one to three kilometres."
+  },
+  {
+   "id": "surface_layer",
+   "schemes": [
+    {
+     "choice": "classic-mm5",
+     "description": "Monin-Obukhov surface layer in its original MM5 form.",
+     "implemented": true,
+     "label": "Classic MM5 surface layer",
+     "maturity": "supported",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1",
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1",
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1",
+      "wsm6-pbl-off-mm5-noah-constant-k-v1",
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    },
+    {
+     "choice": "eta-similarity",
+     "description": "Eta similarity surface layer, the partner of the MYJ boundary layer.",
+     "implemented": true,
+     "label": "Eta similarity surface layer",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1"
+     ]
+    },
+    {
+     "choice": "mynn",
+     "description": "MYNN surface layer, the partner of the MYNN boundary layer.",
+     "implemented": true,
+     "label": "MYNN surface layer",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1"
+     ]
+    },
+    {
+     "choice": "off",
+     "description": "No surface-layer scheme.",
+     "implemented": true,
+     "label": "Surface layer off",
+     "maturity": "supported",
+     "suites": []
+    },
+    {
+     "choice": "revised-mm5",
+     "description": "Monin-Obukhov surface layer with the 2012 revisions.",
+     "implemented": true,
+     "label": "Revised MM5 surface layer",
+     "maturity": "supported",
+     "suites": [
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1"
+     ]
+    }
+   ],
+   "what": "Heat, moisture and drag exchanged between the ground and the lowest model level."
+  },
+  {
+   "id": "land_surface",
+   "schemes": [
+    {
+     "choice": "noah",
+     "description": "Four soil layers with vegetation and snow; the standard land model.",
+     "implemented": true,
+     "label": "Four-layer Noah LSM",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1",
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1",
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1",
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-pbl-off-mm5-noah-constant-k-v1",
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1"
+     ]
+    },
+    {
+     "choice": "noah-mp",
+     "description": "Noah with a canopy layer, layered snow and groundwater options; heavier.",
+     "implemented": true,
+     "label": "Noah-MP land-surface model",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1"
+     ]
+    },
+    {
+     "choice": "off",
+     "description": "No land model: the ground temperature is held as given.",
+     "implemented": true,
+     "label": "Land-surface model off",
+     "maturity": "supported",
+     "suites": []
+    },
+    {
+     "choice": "ruc-lsm",
+     "description": "Nine soil levels and layered snow; the land model HRRR uses.",
+     "implemented": true,
+     "label": "RUC land-surface model",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    }
+   ],
+   "what": "Soil temperature and moisture, vegetation and snow on the ground."
+  },
+  {
+   "id": "radiation",
+   "schemes": [
+    {
+     "choice": "analytic-clear-sky",
+     "description": "Clear-sky formulas with no clouds or gases. For tests only.",
+     "implemented": true,
+     "label": "Analytic clear-sky radiation",
+     "maturity": "supported",
+     "suites": []
+    },
+    {
+     "choice": "dudhia-shortwave",
+     "description": "Dudhia sunlight only, no infrared. Runs by day only.",
+     "implemented": true,
+     "label": "Longwave off + WRF Dudhia shortwave",
+     "maturity": "supported",
+     "suites": [
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-pbl-off-mm5-noah-constant-k-v1",
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    },
+    {
+     "choice": "off",
+     "description": "No radiation.",
+     "implemented": true,
+     "label": "Radiation off",
+     "maturity": "supported",
+     "suites": []
+    },
+    {
+     "choice": "rte-rrtmgp:rte-rrtmgp",
+     "description": "Infrared and sunlight through clouds and gases, both streams (RTE+RRTMGP or the WRF RRTMG port).",
+     "implemented": true,
+     "label": "RTE+RRTMGP longwave and shortwave",
+     "maturity": "supported",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1",
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1"
+     ]
+    },
+    {
+     "choice": "wrf-rrtm-dudhia",
+     "description": "WRF RRTM infrared with Dudhia sunlight; the older pairing.",
+     "implemented": true,
+     "label": "WRF RRTM longwave + Dudhia shortwave",
+     "maturity": "implemented-unverified",
+     "suites": []
+    }
+   ],
+   "what": "Sunlight (shortwave) and infrared (longwave) heating and cooling."
+  },
+  {
+   "id": "turbulence",
+   "schemes": [
+    {
+     "choice": "closure-supplied",
+     "description": "No separate mixing operator: the SASE closure supplies all mixing.",
+     "implemented": true,
+     "label": "no km_opt operator (closure-supplied mixing)",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wsm6-sase-revised-mm5-noah-closure-supplied-v1"
+     ]
+    },
+    {
+     "choice": "constant-k",
+     "description": "Fixed mixing coefficients, for tests.",
+     "implemented": true,
+     "label": "constant K (khdif/kvdif)",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wsm6-pbl-off-mm5-noah-constant-k-v1"
+     ]
+    },
+    {
+     "choice": "smagorinsky-2d",
+     "description": "Horizontal Smagorinsky mixing; the usual choice with a boundary-layer scheme.",
+     "implemented": true,
+     "label": "2-D Smagorinsky",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+      "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+      "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1",
+      "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+      "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+      "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1",
+      "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+      "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+      "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+      "thompson-mp8-ysu-mm5-noah-validation-v1",
+      "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1",
+      "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+      "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+      "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+      "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+      "wsm6-ysu-mm5-noah-no-radiation-v1",
+      "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+      "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1"
+     ]
+    },
+    {
+     "choice": "smagorinsky-3d",
+     "description": "3-D Smagorinsky mixing for large-eddy runs with the boundary layer off.",
+     "implemented": true,
+     "label": "3-D Smagorinsky",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1"
+     ]
+    },
+    {
+     "choice": "tke-1.5-order",
+     "description": "3-D mixing from a predicted turbulent energy, for large-eddy runs with the boundary layer off.",
+     "implemented": true,
+     "label": "1.5-order prognostic TKE",
+     "maturity": "implemented-unverified",
+     "suites": [
+      "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1"
+     ]
+    }
+   ],
+   "what": "The mixing operator inside the dynamics, apart from the boundary-layer scheme."
+  }
+ ],
+ "presets": [
+  {
+   "dx_km": 3.0,
+   "id": "convection-3km",
+   "intention": "Thunderstorms at 3 km",
+   "suite": "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+   "why": "No cumulus scheme, so the 3 km grid makes its own storms, with Thompson ice and radiation by day and night."
+  },
+  {
+   "dx_km": 12.0,
+   "id": "tropical-cyclone",
+   "intention": "Tropical cyclone",
+   "suite": "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+   "why": "Kain-Fritsch handles the rainbands a 12 km grid cannot resolve, and Morrison carries two-moment ice."
+  },
+  {
+   "dx_km": 3.0,
+   "id": "winter-precipitation-type",
+   "intention": "Winter precipitation type",
+   "suite": "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+   "why": "Thompson keeps snow, graupel and rain apart, which the rain, snow and sleet split is read from."
+  },
+  {
+   "dx_km": 12.0,
+   "id": "fast-look",
+   "intention": "Fast look",
+   "suite": "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+   "why": "Morrison with Kain-Fritsch on a 12 km grid: 16 times fewer columns than 3 km and a 4 times longer step."
+  },
+  {
+   "dx_km": 0.5,
+   "id": "les",
+   "intention": "Large-eddy simulation",
+   "suite": "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+   "why": "Boundary layer off with a 3-D turbulent-energy closure, because below 1 km the grid resolves the big eddies. 500 m is the finest outer grid Create starts. Daytime only: pick a start and length that stay in daylight."
+  },
+  {
+   "dx_km": 1.0,
+   "id": "coastal-fog-stratus",
+   "intention": "Coastal fog and low stratus",
+   "suite": "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+   "why": "MYNN mixing with its own cloud fraction, the RUC land surface and Thompson cloud water, with radiation by day and night. Scored against stations and ceilometers on marine fog days, this combination kept the fog and stratus that YSU or Noah each lost part of."
+  }
+ ],
+ "suites": [
+  {
+   "components": {
+    "cumulus": "kain-fritsch",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1",
+   "label": "20CRv3 WSM6 + YSU + classic MM5 + Noah + KF + RTE+RRTMGP",
+   "maturity": "implemented-unverified",
+   "summary": "20crv3-wsm6-ysu-mm5-noah-kf-rte-rrtmgp-implemented-unverified-v1: mp_physics 6, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), Kain-Fritsch cumulus, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 8
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "kessler-mp1",
+    "pbl": "ysu",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "kessler-mp1-ysu-mm5-noah-dudhia-v1",
+   "label": "Kessler warm rain + YSU + classic MM5 + Noah + Dudhia SW",
+   "maturity": "implemented-unverified",
+   "summary": "kessler-mp1-ysu-mm5-noah-dudhia-v1: mp_physics 1, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "new-tiedtke",
+    "land_surface": "noah",
+    "microphysics": "milbrandt2mom-mp9",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1",
+   "label": "Milbrandt-Yau two-moment + YSU + classic MM5 + Noah + New Tiedtke + legacy RRTMG",
+   "maturity": "implemented-unverified",
+   "summary": "milbrandt2mom-mp9-ysu-mm5-noah-ntiedtke-rrtmg-legacy-v1: mp_physics 9, longwave legacy RRTMG, shortwave legacy RRTMG (radt 12 min), parameterized cumulus, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "kain-fritsch",
+    "land_surface": "noah",
+    "microphysics": "morrison-mp10",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+   "label": "Morrison + YSU + classic MM5 + Noah + KF + RTE+RRTMGP",
+   "maturity": "wrf-matched-run",
+   "summary": "morrison-mp10-ysu-mm5-noah-kf-rte-rrtmgp-v1: mp_physics 10, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), Kain-Fritsch cumulus, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 8
+   }
+  },
+  {
+   "components": {
+    "cumulus": "kain-fritsch",
+    "land_surface": "noah",
+    "microphysics": "nssl2-mp18",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1",
+   "label": "NSSL-2 + YSU + classic MM5 + Noah + KF + legacy RRTMG",
+   "maturity": "wrf-matched-run-candidate",
+   "summary": "nssl2-mp18-ysu-mm5-noah-kf-rrtmg-legacy-validation-candidate-v1: mp_physics 18, longwave legacy RRTMG, shortwave legacy RRTMG (radt 12 min), Kain-Fritsch cumulus, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 8
+   }
+  },
+  {
+   "components": {
+    "cumulus": "kain-fritsch",
+    "land_surface": "noah",
+    "microphysics": "nssl2-mp18",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1",
+   "label": "NSSL-2 + YSU + classic MM5 + Noah + KF + RTE+RRTMGP",
+   "maturity": "wrf-matched-run-candidate",
+   "summary": "nssl2-mp18-ysu-mm5-noah-kf-rte-rrtmgp-validation-candidate-v1: mp_physics 18, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), Kain-Fritsch cumulus, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 8
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "p3-mp50",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1",
+   "label": "P3 one-category + YSU + classic MM5 + Noah + cumulus off + legacy RRTMG",
+   "maturity": "implemented-unverified",
+   "summary": "p3-mp50-ysu-mm5-noah-rrtmg-legacy-v1: mp_physics 50, longwave legacy RRTMG, shortwave legacy RRTMG (radt 12 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "thompson-aerosol-mp28",
+    "pbl": "myj",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "eta-similarity",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1",
+   "label": "Thompson aerosol-aware + MYJ + Eta similarity + Noah + cumulus off + RTE+RRTMGP",
+   "maturity": "implemented-unverified",
+   "summary": "thompson-aerosol-mp28-myj-eta-noah-rte-rrtmgp-v1: mp_physics 28, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), NO cumulus parameterization, bl_pbl_physics 2, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "ruc-lsm",
+    "microphysics": "thompson-mp8",
+    "pbl": "mynn",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1",
+   "label": "Thompson + MYNN PBL + MYNN surface layer + RUC LSM + Dudhia SW",
+   "maturity": "implemented-unverified",
+   "summary": "thompson-mp8-mynn-mynn-ruc-dudhia-implemented-unverified-v1: mp_physics 8, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 3",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 256,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "ruc-lsm",
+    "microphysics": "thompson-mp8",
+    "pbl": "mynn",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+   "label": "Thompson + MYNN PBL + MYNN surface layer + RUC LSM + RTE+RRTMGP",
+   "maturity": "implemented-unverified",
+   "summary": "thompson-mp8-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1: mp_physics 8, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 3",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "thompson-mp8",
+    "pbl": "shinhong",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1",
+   "label": "Thompson + Shin-Hong + classic MM5 + Noah + cumulus off + legacy RRTMG",
+   "maturity": "wrf-matched-run-candidate",
+   "summary": "thompson-mp8-shinhong-mm5-noah-rrtmg-legacy-v1: mp_physics 8, longwave legacy RRTMG, shortwave legacy RRTMG (radt 12 min), NO cumulus parameterization, bl_pbl_physics 11, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "kain-fritsch",
+    "land_surface": "noah",
+    "microphysics": "thompson-mp8",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": null,
+   "day_only_reason": null,
+   "id": "thompson-mp8-ysu-mm5-noah-kf-rte-rrtmgp-v1",
+   "label": "Thompson + YSU + classic MM5 + Noah + KF + RTE+RRTMGP",
+   "maturity": "wrf-matched-run",
+   "summary": null,
+   "verification": null,
+   "vertical_levels": null
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "thompson-mp8",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1",
+   "label": "Thompson + YSU + classic MM5 + Noah + cumulus off + legacy RRTMG",
+   "maturity": "wrf-matched-run-candidate",
+   "summary": "thompson-mp8-ysu-mm5-noah-rrtmg-legacy-v1: mp_physics 8, longwave legacy RRTMG, shortwave legacy RRTMG (radt 12 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "thompson-mp8",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1",
+   "label": "Thompson + YSU + classic MM5 + Noah + cumulus off + RTE+RRTMGP",
+   "maturity": "implemented-unverified",
+   "summary": "thompson-mp8-ysu-mm5-noah-rte-rrtmgp-v1: mp_physics 8, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "thompson-mp8",
+    "pbl": "ysu",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "thompson-mp8-ysu-mm5-noah-validation-v1",
+   "label": "Thompson + YSU + classic MM5 + Noah + Dudhia SW",
+   "maturity": "experimental-runtime",
+   "summary": "thompson-mp8-ysu-mm5-noah-validation-v1: mp_physics 8, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "experimental-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 128,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "grell-freitas",
+    "land_surface": "noah",
+    "microphysics": "wdm6-mp16",
+    "pbl": "ysu",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1",
+   "label": "WDM6 + YSU + classic MM5 + Noah + Grell-Freitas + RTE+RRTMGP",
+   "maturity": "implemented-unverified",
+   "summary": "wdm6-mp16-ysu-mm5-noah-grell-freitas-rte-rrtmgp-v1: mp_physics 16, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), Grell-Freitas cumulus, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 12
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "mynn",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1",
+   "label": "WSM6 + MYNN PBL + MYNN surface layer + Noah + Dudhia SW",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-mynn-mynn-noah-no-radiation-implemented-unverified-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "mynn",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1",
+   "label": "WSM6 + MYNN PBL + MYNN surface layer + Noah + RTE+RRTMGP",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-mynn-mynn-noah-rte-rrtmgp-implemented-unverified-v1: mp_physics 6, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah-mp",
+    "microphysics": "wsm6-mp6",
+    "pbl": "mynn",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1",
+   "label": "WSM6 + MYNN PBL + MYNN surface layer + Noah-MP + Dudhia SW (expert only)",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-mynn-mynn-noahmp-no-radiation-expert-only-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 4",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah-mp",
+    "microphysics": "wsm6-mp6",
+    "pbl": "mynn",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1",
+   "label": "WSM6 + MYNN PBL + MYNN surface layer + Noah-MP + RTE+RRTMGP (expert only)",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-mynn-mynn-noahmp-rte-rrtmgp-expert-only-v1: mp_physics 6, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 4",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "ruc-lsm",
+    "microphysics": "wsm6-mp6",
+    "pbl": "mynn",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1",
+   "label": "WSM6 + MYNN PBL + MYNN surface layer + RUC LSM + Dudhia SW (HRRR pairing)",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-mynn-mynn-ruc-no-radiation-implemented-unverified-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 3",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "ruc-lsm",
+    "microphysics": "wsm6-mp6",
+    "pbl": "mynn",
+    "radiation": "rte-rrtmgp",
+    "surface_layer": "mynn",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": false,
+   "day_only_reason": null,
+   "id": "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1",
+   "label": "WSM6 + MYNN PBL + MYNN surface layer + RUC LSM + RTE+RRTMGP (HRRR pairing)",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-mynn-mynn-ruc-rte-rrtmgp-implemented-unverified-v1: mp_physics 6, longwave RTE+RRTMGP, shortwave RTE+RRTMGP (radt 12 min), NO cumulus parameterization, bl_pbl_physics 5, sf_surface_physics 3",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 5
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "off",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "constant-k"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-pbl-off-mm5-noah-constant-k-v1",
+   "label": "WSM6 + PBL off + classic MM5 + Noah + constant-K mixing",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-pbl-off-mm5-noah-constant-k-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 0, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 2
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "off",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-3d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1",
+   "label": "WSM6 + PBL off + classic MM5 + Noah + 3D Smagorinsky mixing",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-pbl-off-mm5-noah-smagorinsky-3d-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 0, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 2
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "off",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "tke-1.5-order"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1",
+   "label": "WSM6 + PBL off + classic MM5 + Noah + 1.5-order TKE mixing",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-pbl-off-mm5-noah-tke-1-5-order-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 0, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 2
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "sase",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "revised-mm5",
+    "turbulence": "closure-supplied"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-sase-revised-mm5-noah-closure-supplied-v1",
+   "label": "WSM6 + SASE + revised MM5 + Noah + closure-supplied mixing",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-sase-revised-mm5-noah-closure-supplied-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 900, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 2
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah",
+    "microphysics": "wsm6-mp6",
+    "pbl": "ysu",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-ysu-mm5-noah-no-radiation-v1",
+   "label": "WSM6 + YSU + classic MM5 + Noah + Dudhia SW",
+   "maturity": "supported",
+   "summary": "wsm6-ysu-mm5-noah-no-radiation-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 2",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "noah-mp",
+    "microphysics": "wsm6-mp6",
+    "pbl": "ysu",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1",
+   "label": "WSM6 + YSU + classic MM5 + Noah-MP + Dudhia SW (expert only)",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-ysu-mm5-noahmp-no-radiation-expert-only-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 4",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 4
+   }
+  },
+  {
+   "components": {
+    "cumulus": "off",
+    "land_surface": "ruc-lsm",
+    "microphysics": "wsm6-mp6",
+    "pbl": "ysu",
+    "radiation": "dudhia-shortwave",
+    "surface_layer": "classic-mm5",
+    "turbulence": "smagorinsky-2d"
+   },
+   "day_only": true,
+   "day_only_reason": "ra_sw_physics 1 with ra_lw_physics 0: shortwave heats the surface by day while no longwave scheme runs, so a window that includes local night is refused unless the validation experiment is declared",
+   "id": "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1",
+   "label": "WSM6 + YSU + classic MM5 + RUC LSM + Dudhia SW",
+   "maturity": "implemented-unverified",
+   "summary": "wsm6-ysu-mm5-ruc-no-radiation-implemented-unverified-v1: mp_physics 6, longwave OFF, shortwave Dudhia (radt 1 min), NO cumulus parameterization, bl_pbl_physics 1, sf_surface_physics 3",
+   "verification": "supported-not-wrf-verified",
+   "vertical_levels": {
+    "maximum": 80,
+    "minimum": 4
+   }
+  }
+ ]
+}

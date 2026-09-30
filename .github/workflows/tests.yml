@@ -1,0 +1,28 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install test tools
+        # numpy and netCDF4 let the run-difference test read its small NetCDF frames
+        run: python -m pip install pytest==8.4.2 numpy==2.3.3 netCDF4==1.7.2
+      - name: Shipped-text rules
+        run: python scripts/lint_text.py
+      - name: Tests
+        run: python -m pytest -q -rs

@@ -1,0 +1,3693 @@
+{
+ "configurations": [
+  {
+   "comparison": "Compare source and model at matched valid times.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "2m_temperature",
+    "total_qpf",
+    "500mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the region plus the approaching pressure and frontal pattern.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover the region plus the approaching pressure and frontal pattern. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "regional-evolution.reference",
+   "leaf_id": "regional-evolution",
+   "limitations": [
+    "One short regional run samples one realization; it does not establish forecast skill.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How does the regional pressure and rainfall pattern evolve?",
+   "title": "Regional reference"
+  },
+  {
+   "comparison": "Compare passage timing inside and outside the child.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "2m_temperature",
+    "total_qpf",
+    "500mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the region plus the approaching pressure and frontal pattern.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover the region plus the approaching pressure and frontal pattern. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "regional-evolution.front",
+   "leaf_id": "regional-evolution",
+   "limitations": [
+    "One short regional run samples one realization; it does not establish forecast skill.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When does the frontal wind and temperature change cross the focus area?",
+   "title": "Frontal passage detail"
+  },
+  {
+   "comparison": "Compare morning, afternoon and overnight phases from the same source.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "2m_temperature",
+    "total_qpf",
+    "500mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the region plus the approaching pressure and frontal pattern.",
+    "forecast_hours": 24,
+    "history_interval_s": 1800,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover the region plus the approaching pressure and frontal pattern. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "regional-evolution.diurnal",
+   "leaf_id": "regional-evolution",
+   "limitations": [
+    "One short regional run samples one realization; it does not establish forecast skill.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How much of the local temperature change follows the daily cycle?",
+   "title": "Full diurnal context"
+  },
+  {
+   "comparison": "Use the same area definitions and valid times in later refinements.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Include both comparison areas and the flow that connects them.",
+    "forecast_hours": 24,
+    "history_interval_s": 1800,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include both comparison areas and the flow that connects them. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "local-contrast.transect",
+   "leaf_id": "local-contrast",
+   "limitations": [
+    "Grid-cell weather does not represent a particular street, shelter or building.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "Which contrasts already exist at the parent scale?",
+   "title": "Regional contrast map"
+  },
+  {
+   "comparison": "Compare native terrain/landmask and model fields, not spacing labels alone.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Include both comparison areas and the flow that connects them.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include both comparison areas and the flow that connects them. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "local-contrast.terrain",
+   "leaf_id": "local-contrast",
+   "limitations": [
+    "Grid-cell weather does not represent a particular street, shelter or building.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does a child with actual finer geography alter the local contrast?",
+   "title": "Resolved geography child"
+  },
+  {
+   "comparison": "Replay a selected parent interval and compare area means after spin-up.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Include both comparison areas and the flow that connects them.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include both comparison areas and the flow that connects them. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "local-contrast.archive",
+   "leaf_id": "local-contrast",
+   "limitations": [
+    "Grid-cell weather does not represent a particular street, shelter or building.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How does a compact child respond during the strongest contrast?",
+   "title": "Archived local replay"
+  },
+  {
+   "comparison": "Compare pre-storm environments with the later echo and UH paths.",
+   "diagnostics": [
+    "mucape",
+    "var:wrf_lapse_rate_700_500",
+    "bulk_shear_0_6km",
+    "composite_reflectivity",
+    "uh_2to5km"
+   ],
+   "geometry": {
+    "extent_intent": "Cover inflow, expected initiation and the complete storm path; keep the child wider than the storm and its inflow.",
+    "forecast_hours": 6,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Cover inflow, expected initiation and the complete storm path; keep the child wider than the storm and its inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "hail-growth.environment",
+   "leaf_id": "hail-growth",
+   "limitations": [
+    "These are environmental and storm-structure proxies; this catalog does not calculate hail diameter, trajectories or verified hail at the ground.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Which storm environments combine stronger buoyancy, steeper lapse rates and sustained shear?",
+   "title": "Growth-layer context"
+  },
+  {
+   "comparison": "Compare storm duration and co-location of echo/UH at matched times.",
+   "diagnostics": [
+    "mucape",
+    "var:wrf_lapse_rate_700_500",
+    "bulk_shear_0_6km",
+    "composite_reflectivity",
+    "uh_2to5km"
+   ],
+   "geometry": {
+    "extent_intent": "Cover inflow, expected initiation and the complete storm path; keep the child wider than the storm and its inflow.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Cover inflow, expected initiation and the complete storm path; keep the child wider than the storm and its inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "hail-growth.structure",
+   "leaf_id": "hail-growth",
+   "limitations": [
+    "These are environmental and storm-structure proxies; this catalog does not calculate hail diameter, trajectories or verified hail at the ground.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does a finer live child sustain a different rotating echo structure?",
+   "title": "Persistent updraft proxy"
+  },
+  {
+   "comparison": "Compare a dense-cadence archived replay with the live-child reference.",
+   "diagnostics": [
+    "mucape",
+    "var:wrf_lapse_rate_700_500",
+    "bulk_shear_0_6km",
+    "composite_reflectivity",
+    "uh_2to5km"
+   ],
+   "geometry": {
+    "extent_intent": "Cover inflow, expected initiation and the complete storm path; keep the child wider than the storm and its inflow.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Cover inflow, expected initiation and the complete storm path; keep the child wider than the storm and its inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "hail-growth.archive",
+   "leaf_id": "hail-growth",
+   "limitations": [
+    "These are environmental and storm-structure proxies; this catalog does not calculate hail diameter, trajectories or verified hail at the ground.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How sensitive is the mature-storm structure to offline child forcing?",
+   "title": "Short hail-case replay"
+  },
+  {
+   "comparison": "Compare consistent profile locations and low-level versus composite echoes.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "1km_reflectivity",
+    "mucape",
+    "2m_dewpoint_10m_winds",
+    "var:wrf_lapse_rate_700_500"
+   ],
+   "geometry": {
+    "extent_intent": "Include warm and cool sides of the storm path plus representative inflow.",
+    "forecast_hours": 6,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include warm and cool sides of the storm path plus representative inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "hail-survival.airmasses",
+   "leaf_id": "hail-survival",
+   "limitations": [
+    "A bright echo or favorable sounding does not prove surface hail; microphysics and observed hail reports are needed for validation.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do hail-case thermodynamic profiles differ across the nearby air-mass boundary?",
+   "title": "Warm versus cool inflow"
+  },
+  {
+   "comparison": "Compare low-level/composite reflectivity changes with profile evolution.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "1km_reflectivity",
+    "mucape",
+    "2m_dewpoint_10m_winds",
+    "var:wrf_lapse_rate_700_500"
+   ],
+   "geometry": {
+    "extent_intent": "Include warm and cool sides of the storm path plus representative inflow.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include warm and cool sides of the storm path plus representative inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "hail-survival.transition",
+   "leaf_id": "hail-survival",
+   "limitations": [
+    "A bright echo or favorable sounding does not prove surface hail; microphysics and observed hail reports are needed for validation.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does the low-level echo evolve differently as the storm crosses the boundary?",
+   "title": "Low-level echo evolution"
+  },
+  {
+   "comparison": "Check thermodynamic profiles against the parent before interpreting any echo difference.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "1km_reflectivity",
+    "mucape",
+    "2m_dewpoint_10m_winds",
+    "var:wrf_lapse_rate_700_500"
+   ],
+   "geometry": {
+    "extent_intent": "Include warm and cool sides of the storm path plus representative inflow.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include warm and cool sides of the storm path plus representative inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "hail-survival.replay",
+   "leaf_id": "hail-survival",
+   "limitations": [
+    "A bright echo or favorable sounding does not prove surface hail; microphysics and observed hail reports are needed for validation.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Is the inferred melting-environment contrast retained in a compact archived replay?",
+   "title": "Boundary-crossing replay"
+  },
+  {
+   "comparison": "Compare environment before convection rather than sampling only storm-modified air.",
+   "diagnostics": [
+    "uh_2to5km",
+    "uh_2to5km_run_max",
+    "srh_0_1km",
+    "bulk_shear_0_6km",
+    "composite_reflectivity_uh"
+   ],
+   "geometry": {
+    "extent_intent": "Cover storm inflow and the full plausible path, including alternative cells within the search corridor.",
+    "forecast_hours": 6,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover storm inflow and the full plausible path, including alternative cells within the search corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "rotation.environment",
+   "leaf_id": "rotation",
+   "limitations": [
+    "UH is a grid-scale rotating-updraft diagnostic, not a tornado, tornado intensity or damage prediction.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Which pre-storm environments accompany persistent modeled rotation?",
+   "title": "Shear and buoyancy context"
+  },
+  {
+   "comparison": "Compare fixed-domain UH paths and echo morphology with the coarser parent.",
+   "diagnostics": [
+    "uh_2to5km",
+    "uh_2to5km_run_max",
+    "srh_0_1km",
+    "bulk_shear_0_6km",
+    "composite_reflectivity_uh"
+   ],
+   "geometry": {
+    "extent_intent": "Cover storm inflow and the full plausible path, including alternative cells within the search corridor.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover storm inflow and the full plausible path, including alternative cells within the search corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "rotation.structure",
+   "leaf_id": "rotation",
+   "limitations": [
+    "UH is a grid-scale rotating-updraft diagnostic, not a tornado, tornado intensity or damage prediction.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do UH duration and echo organization change in a finer live child?",
+   "title": "Fixed fine structure"
+  },
+  {
+   "comparison": "Compare track fixes, fallback periods and UH paths against a fixed child.",
+   "diagnostics": [
+    "uh_2to5km",
+    "uh_2to5km_run_max",
+    "srh_0_1km",
+    "bulk_shear_0_6km",
+    "composite_reflectivity_uh"
+   ],
+   "geometry": {
+    "extent_intent": "Cover storm inflow and the full plausible path, including alternative cells within the search corridor.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover storm inflow and the full plausible path, including alternative cells within the search corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "rotation.follow",
+   "leaf_id": "rotation",
+   "limitations": [
+    "UH is a grid-scale rotating-updraft diagnostic, not a tornado, tornado intensity or damage prediction.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Movement retains a fixed-size child within a finite prepared parent corridor; it does not provide unlimited travel, recover missing parent features or make dormant nests free in VRAM."
+   ],
+   "method": "moving_nest",
+   "research_question": "Can a UH follower keep the rotating updraft and inflow within the child?",
+   "title": "Follow the rotating updraft"
+  },
+  {
+   "comparison": "Compare the boundary evolution and first echo times across the area.",
+   "diagnostics": [
+    "mlcape",
+    "mlcin",
+    "2m_dewpoint_10m_winds",
+    "composite_reflectivity",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Include the boundary, both neighboring air masses and downstream storm room.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Include the boundary, both neighboring air masses and downstream storm room. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "convective-initiation.boundary",
+   "leaf_id": "convective-initiation",
+   "limitations": [
+    "Subgrid triggers and source errors can dominate initiation; a warm bubble is a separate explicit scenario, never an automatic correction.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Where do moisture convergence proxies and weakening inhibition precede echoes?",
+   "title": "Boundary and inhibition"
+  },
+  {
+   "comparison": "Compare first sustained echoes using identical thresholds and valid times.",
+   "diagnostics": [
+    "mlcape",
+    "mlcin",
+    "2m_dewpoint_10m_winds",
+    "composite_reflectivity",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Include the boundary, both neighboring air masses and downstream storm room.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Include the boundary, both neighboring air masses and downstream storm room. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "convective-initiation.fine",
+   "leaf_id": "convective-initiation",
+   "limitations": [
+    "Subgrid triggers and source errors can dominate initiation; a warm bubble is a separate explicit scenario, never an automatic correction.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does the initiation timing or location shift when a finer child starts before initiation?",
+   "title": "Live initiation child"
+  },
+  {
+   "comparison": "Hold source and domain fixed and document parent boundary cadence explicitly.",
+   "diagnostics": [
+    "mlcape",
+    "mlcin",
+    "2m_dewpoint_10m_winds",
+    "composite_reflectivity",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Include the boundary, both neighboring air masses and downstream storm room.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Include the boundary, both neighboring air masses and downstream storm room. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "convective-initiation.archive",
+   "leaf_id": "convective-initiation",
+   "limitations": [
+    "Subgrid triggers and source errors can dominate initiation; a warm bubble is a separate explicit scenario, never an automatic correction.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How much does archived forcing change initiation compared with a live child?",
+   "title": "Dense-boundary replay"
+  },
+  {
+   "comparison": "Compare propagation, echo organization and the continuity of resolved 10 m wind-snapshot maxima over the entire run.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "10m_wind_run_max",
+    "mslp_10m_winds",
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Plan roughly 800–1500 km along the event path when the case requires it, with inflow and lateral clearance; a smaller domain must narrow the research question.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Plan roughly 800–1500 km along the event path when the case requires it, with inflow and lateral clearance; a smaller domain must narrow the research question. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "derecho.corridor",
+   "leaf_id": "derecho",
+   "limitations": [
+    "A modeled bow or gust swath does not establish a derecho; a compact child cannot represent the entire system lifetime.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does the line organize and maintain its wind swath across the regional corridor?",
+   "title": "Whole-system corridor"
+  },
+  {
+   "comparison": "Compare the segment against the full-system reference; retain environmental inflow.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "10m_wind_run_max",
+    "mslp_10m_winds",
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Plan roughly 800–1500 km along the event path when the case requires it, with inflow and lateral clearance; a smaller domain must narrow the research question.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Plan roughly 800–1500 km along the event path when the case requires it, with inflow and lateral clearance; a smaller domain must narrow the research question. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "derecho.segment",
+   "leaf_id": "derecho",
+   "limitations": [
+    "A modeled bow or gust swath does not establish a derecho; a compact child cannot represent the entire system lifetime.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "What changes near one bow apex while the live parent retains the larger cold pool?",
+   "title": "Bowing-segment detail"
+  },
+  {
+   "comparison": "Inspect track switches and child clipping against a fixed regional reference.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "10m_wind_run_max",
+    "mslp_10m_winds",
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Plan roughly 800–1500 km along the event path when the case requires it, with inflow and lateral clearance; a smaller domain must narrow the research question.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Plan roughly 800–1500 km along the event path when the case requires it, with inflow and lateral clearance; a smaller domain must narrow the research question. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "derecho.follow",
+   "leaf_id": "derecho",
+   "limitations": [
+    "A modeled bow or gust swath does not establish a derecho; a compact child cannot represent the entire system lifetime.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Movement retains a fixed-size child within a finite prepared parent corridor; it does not provide unlimited travel, recover missing parent features or make dormant nests free in VRAM."
+   ],
+   "method": "moving_nest",
+   "research_question": "Can an echo-following child retain the selected bow segment during propagation?",
+   "title": "Follow an echo segment"
+  },
+  {
+   "comparison": "Compare vortex centre and surrounding flow at matched valid times.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "850mb_height_winds",
+    "500mb_height_winds",
+    "200mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the full forecast track envelope and upstream steering features; use a basin/regional parent as the case demands.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the full forecast track envelope and upstream steering features; use a basin/regional parent as the case demands. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "tropical-track.steering",
+   "leaf_id": "tropical-track",
+   "limitations": [
+    "Tracker centres are diagnostic choices; a model track is not official guidance and a lost fix is not storm disappearance.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How does the cyclone move within the source's evolving steering pattern?",
+   "title": "Broad steering reference"
+  },
+  {
+   "comparison": "Compare centre evolution and boundary proximity with the broad reference.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "850mb_height_winds",
+    "500mb_height_winds",
+    "200mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the full forecast track envelope and upstream steering features; use a basin/regional parent as the case demands.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the full forecast track envelope and upstream steering features; use a basin/regional parent as the case demands. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "tropical-track.fixed",
+   "leaf_id": "tropical-track",
+   "limitations": [
+    "Tracker centres are diagnostic choices; a model track is not official guidance and a lost fix is not storm disappearance.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does a fixed child retain the relevant track corridor while refining regional flow?",
+   "title": "Fixed coastal corridor"
+  },
+  {
+   "comparison": "Compare track fixes and parent/child centres, including weak or competing lows.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "850mb_height_winds",
+    "500mb_height_winds",
+    "200mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the full forecast track envelope and upstream steering features; use a basin/regional parent as the case demands.",
+    "forecast_hours": 24,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the full forecast track envelope and upstream steering features; use a basin/regional parent as the case demands. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "tropical-track.follow",
+   "leaf_id": "tropical-track",
+   "limitations": [
+    "Tracker centres are diagnostic choices; a model track is not official guidance and a lost fix is not storm disappearance.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Movement retains a fixed-size child within a finite prepared parent corridor; it does not provide unlimited travel, recover missing parent features or make dormant nests free in VRAM."
+   ],
+   "method": "moving_nest",
+   "research_question": "Can the native pressure-height follower retain the circulation through the forecast?",
+   "title": "Pressure-centre follower"
+  },
+  {
+   "comparison": "Compare both metrics and their locations rather than interpreting either alone.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "composite_reflectivity",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Keep the inner circulation, outer rainbands and expected movement comfortably inside the parent corridor.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Keep the inner circulation, outer rainbands and expected movement comfortably inside the parent corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "tropical-intensity.evolution",
+   "leaf_id": "tropical-intensity",
+   "limitations": [
+    "Minimum pressure and grid-cell winds depend on resolution and source vortex quality; no balanced insertion or coupled ocean response is supplied.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Do central pressure and peak resolved winds evolve consistently through the period?",
+   "title": "Pressure-wind baseline"
+  },
+  {
+   "comparison": "Compare radial/area summaries after an explicit adjustment period.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "composite_reflectivity",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Keep the inner circulation, outer rainbands and expected movement comfortably inside the parent corridor.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Keep the inner circulation, outer rainbands and expected movement comfortably inside the parent corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "tropical-intensity.core",
+   "leaf_id": "tropical-intensity",
+   "limitations": [
+    "Minimum pressure and grid-cell winds depend on resolution and source vortex quality; no balanced insertion or coupled ocean response is supplied.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does finer live nesting change the modeled wind/echo structure near the core?",
+   "title": "Inner-core structure"
+  },
+  {
+   "comparison": "Compare fixed and moving configurations with the same source and physics.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "composite_reflectivity",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Keep the inner circulation, outer rainbands and expected movement comfortably inside the parent corridor.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Keep the inner circulation, outer rainbands and expected movement comfortably inside the parent corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "tropical-intensity.follow",
+   "leaf_id": "tropical-intensity",
+   "limitations": [
+    "Minimum pressure and grid-cell winds depend on resolution and source vortex quality; no balanced insertion or coupled ocean response is supplied.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Movement retains a fixed-size child within a finite prepared parent corridor; it does not provide unlimited travel, recover missing parent features or make dormant nests free in VRAM."
+   ],
+   "method": "moving_nest",
+   "research_question": "Does following the core preserve useful coverage while sampling pressure and wind evolution?",
+   "title": "Moving core experiment"
+  },
+  {
+   "comparison": "Compare rolling rain windows and cloud/echo evolution relative to the vortex.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "qpf_1h",
+    "qpf_6h",
+    "precipitable_water",
+    "700mb_rh_height_winds",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the rainband arc and its moisture supply, including land if accumulation there is the question.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Cover the rainband arc and its moisture supply, including land if accumulation there is the question. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "tropical-rainbands.envelope",
+   "leaf_id": "tropical-rainbands",
+   "limitations": [
+    "Atmospheric rainfall does not provide streamflow or inundation; a vortex follower may leave an outer rainband behind.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Which quadrants maintain repeated rainband passage and larger rainfall totals?",
+   "title": "Rainband envelope"
+  },
+  {
+   "comparison": "Keep the child fixed over the accumulation target and compare passage timing.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "qpf_1h",
+    "qpf_6h",
+    "precipitable_water",
+    "700mb_rh_height_winds",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the rainband arc and its moisture supply, including land if accumulation there is the question.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Cover the rainband arc and its moisture supply, including land if accumulation there is the question. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "tropical-rainbands.training",
+   "leaf_id": "tropical-rainbands",
+   "limitations": [
+    "Atmospheric rainfall does not provide streamflow or inundation; a vortex follower may leave an outer rainband behind.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does one outer rainband repeatedly affect the same region?",
+   "title": "Fixed outer-band child"
+  },
+  {
+   "comparison": "Compare area totals and displacement with the live-parent reference.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "qpf_1h",
+    "qpf_6h",
+    "precipitable_water",
+    "700mb_rh_height_winds",
+    "bulk_shear_0_6km"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the rainband arc and its moisture supply, including land if accumulation there is the question.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Cover the rainband arc and its moisture supply, including land if accumulation there is the question. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "tropical-rainbands.archive",
+   "leaf_id": "tropical-rainbands",
+   "limitations": [
+    "Atmospheric rainfall does not provide streamflow or inundation; a vortex follower may leave an outer rainband behind.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How does a dense-cadence replay redistribute rainfall in a selected band interval?",
+   "title": "Rainband interval replay"
+  },
+  {
+   "comparison": "Compare the storm-relative approach and inland periods.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_run_max",
+    "10m_wind_speed_and_direction",
+    "qpf_1h",
+    "total_qpf",
+    "2m_temperature"
+   ],
+   "geometry": {
+    "extent_intent": "Cover offshore approach, the coast and inland path, including terrain that can modify rainfall.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Cover offshore approach, the coast and inland path, including terrain that can modify rainfall. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "tropical-landfall.approach",
+   "leaf_id": "tropical-landfall",
+   "limitations": [
+    "This atmosphere-only configuration does not calculate storm surge, tides, waves, inundation or building-level winds.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do regional wind and rainfall patterns change across coast crossing?",
+   "title": "Approach-to-inland context"
+  },
+  {
+   "comparison": "Compare child geography and local weather with the parent at matched times.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_run_max",
+    "10m_wind_speed_and_direction",
+    "qpf_1h",
+    "total_qpf",
+    "2m_temperature"
+   ],
+   "geometry": {
+    "extent_intent": "Cover offshore approach, the coast and inland path, including terrain that can modify rainfall.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Cover offshore approach, the coast and inland path, including terrain that can modify rainfall. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "tropical-landfall.coast",
+   "leaf_id": "tropical-landfall",
+   "limitations": [
+    "This atmosphere-only configuration does not calculate storm surge, tides, waves, inundation or building-level winds.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does resolved coastline and terrain affect the local wind/rain pattern?",
+   "title": "Fixed landfall detail"
+  },
+  {
+   "comparison": "Use an exact child-grid surface file and compare area/track displacement.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_run_max",
+    "10m_wind_speed_and_direction",
+    "qpf_1h",
+    "total_qpf",
+    "2m_temperature"
+   ],
+   "geometry": {
+    "extent_intent": "Cover offshore approach, the coast and inland path, including terrain that can modify rainfall.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Cover offshore approach, the coast and inland path, including terrain that can modify rainfall. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "tropical-landfall.replay",
+   "leaf_id": "tropical-landfall",
+   "limitations": [
+    "This atmosphere-only configuration does not calculate storm surge, tides, waves, inundation or building-level winds.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does the replay preserve coast-crossing timing while altering local extremes?",
+   "title": "Coastal archived replay"
+  },
+  {
+   "comparison": "Subtract/control-compare first-echo timing and thermodynamic fields.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "mlcape",
+    "mlcin",
+    "uh_2to5km",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Keep the bubble, its surrounding environment and anticipated response well inside the prepared root and child.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Keep the bubble, its surrounding environment and anticipated response well inside the prepared root and child. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "scenario-convection.gentle",
+   "leaf_id": "scenario-convection",
+   "limitations": [
+    "A warm bubble is an imposed local theta change, not balanced storm insertion. It applies at initialization, not as a restart-state edit; route acceptance must be checked before launch.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "The three recommendations isolate amplitude or RH-preservation changes. No successful launch or physical validation is implied until both control and perturbation receipts exist."
+   ],
+   "method": "controlled_scenario",
+   "research_question": "How does a 1 K warm bubble change initiation relative to the unchanged control?",
+   "title": "1 K thermal perturbation"
+  },
+  {
+   "comparison": "Hold location, dimensions, vapor treatment and forcing equal to the 1 K case.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "mlcape",
+    "mlcin",
+    "uh_2to5km",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Keep the bubble, its surrounding environment and anticipated response well inside the prepared root and child.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Keep the bubble, its surrounding environment and anticipated response well inside the prepared root and child. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "scenario-convection.stronger",
+   "leaf_id": "scenario-convection",
+   "limitations": [
+    "A warm bubble is an imposed local theta change, not balanced storm insertion. It applies at initialization, not as a restart-state edit; route acceptance must be checked before launch.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "The three recommendations isolate amplitude or RH-preservation changes. No successful launch or physical validation is implied until both control and perturbation receipts exist."
+   ],
+   "method": "controlled_scenario",
+   "research_question": "Does doubling only the theta amplitude change the response beyond the 1 K case?",
+   "title": "2 K amplitude comparison"
+  },
+  {
+   "comparison": "Compare against 1 K with unchanged vapor; record the accompanying vapor adjustment.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "mlcape",
+    "mlcin",
+    "uh_2to5km",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Keep the bubble, its surrounding environment and anticipated response well inside the prepared root and child.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Keep the bubble, its surrounding environment and anticipated response well inside the prepared root and child. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "scenario-convection.humidity",
+   "leaf_id": "scenario-convection",
+   "limitations": [
+    "A warm bubble is an imposed local theta change, not balanced storm insertion. It applies at initialization, not as a restart-state edit; route acceptance must be checked before launch.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "The three recommendations isolate amplitude or RH-preservation changes. No successful launch or physical validation is implied until both control and perturbation receipts exist."
+   ],
+   "method": "controlled_scenario",
+   "research_question": "How much of the response changes when the 1 K bubble preserves relative humidity?",
+   "title": "Preserve-RH comparison"
+  },
+  {
+   "comparison": "Compare with the scenario author's unchanged control at matched valid times.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "total_qpf",
+    "composite_reflectivity"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the supplied vortex and track envelope with enough surrounding flow to interpret scenario differences.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the supplied vortex and track envelope with enough surrounding flow to interpret scenario differences. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "scenario-tropical-input.source",
+   "leaf_id": "scenario-tropical-input",
+   "limitations": [
+    "No hurricane insertion, relocation or balanced-state operator is available through this catalog. Different source states are not an isolated one-variable causal experiment.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "What weather follows from the supplied hypothetical source as provided?",
+   "title": "Supplied-source baseline"
+  },
+  {
+   "comparison": "Retain source and physics; compare regional and nested scenario runs.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "total_qpf",
+    "composite_reflectivity"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the supplied vortex and track envelope with enough surrounding flow to interpret scenario differences.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the supplied vortex and track envelope with enough surrounding flow to interpret scenario differences. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "scenario-tropical-input.coast",
+   "leaf_id": "scenario-tropical-input",
+   "limitations": [
+    "No hurricane insertion, relocation or balanced-state operator is available through this catalog. Different source states are not an isolated one-variable causal experiment.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does the supplied scenario's atmospheric landfall structure vary locally?",
+   "title": "Scenario landfall detail"
+  },
+  {
+   "comparison": "Compare the moving run's centre and coverage with the fixed scenario baseline.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "total_qpf",
+    "composite_reflectivity"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the supplied vortex and track envelope with enough surrounding flow to interpret scenario differences.",
+    "forecast_hours": 24,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the supplied vortex and track envelope with enough surrounding flow to interpret scenario differences. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "scenario-tropical-input.follow",
+   "leaf_id": "scenario-tropical-input",
+   "limitations": [
+    "No hurricane insertion, relocation or balanced-state operator is available through this catalog. Different source states are not an isolated one-variable causal experiment.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Movement retains a fixed-size child within a finite prepared parent corridor; it does not provide unlimited travel, recover missing parent features or make dormant nests free in VRAM."
+   ],
+   "method": "moving_nest",
+   "research_question": "Can a pressure follower retain the supplied scenario's actual vortex?",
+   "title": "Follow supplied vortex"
+  },
+  {
+   "comparison": "Compare phase and rolling QPF with the pressure/thermal pattern.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "700mb_rh_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the approaching cyclone, the cold-side precipitation shield and the possible band displacement.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 900 km in each horizontal direction. Include the approaching cyclone, the cold-side precipitation shield and the possible band displacement. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 900,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "snow-band.shield",
+   "leaf_id": "snow-band",
+   "limitations": [
+    "QPF and snow-category fields are not snow depth; snow density, settling and accumulation require their own evidence.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Where does the snow shield persist as the cyclone evolves?",
+   "title": "Storm and snow shield"
+  },
+  {
+   "comparison": "Compare band position and area totals with the wider reference.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "700mb_rh_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the approaching cyclone, the cold-side precipitation shield and the possible band displacement.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 900 km in each horizontal direction. Include the approaching cyclone, the cold-side precipitation shield and the possible band displacement. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 900,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "snow-band.band",
+   "leaf_id": "snow-band",
+   "limitations": [
+    "QPF and snow-category fields are not snow depth; snow density, settling and accumulation require their own evidence.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does finer nesting alter the placement or persistence of a narrow band?",
+   "title": "Fixed snow-band child"
+  },
+  {
+   "comparison": "Compare dense-boundary replay and live nesting using the same phase diagnostics.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "700mb_rh_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the approaching cyclone, the cold-side precipitation shield and the possible band displacement.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 900 km in each horizontal direction. Include the approaching cyclone, the cold-side precipitation shield and the possible band displacement. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 900,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "snow-band.archive",
+   "leaf_id": "snow-band",
+   "limitations": [
+    "QPF and snow-category fields are not snow depth; snow density, settling and accumulation require their own evidence.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How much does offline forcing alter a selected band interval?",
+   "title": "Snow-band replay"
+  },
+  {
+   "comparison": "Compare the lake crossing and downwind precipitation through wind shifts.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "10m_wind_speed_and_direction",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "2m_temperature"
+   ],
+   "geometry": {
+    "extent_intent": "Cover upstream air, the whole relevant fetch, shoreline and downwind band corridor.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Cover upstream air, the whole relevant fetch, shoreline and downwind band corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "lake-snow.fetch",
+   "leaf_id": "lake-snow",
+   "limitations": [
+    "A refined grid with parent-interpolated lake geometry or surface state does not add the missing lake information.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Which wind and thermal conditions coincide with sustained downwind snowfall?",
+   "title": "Lake-fetch environment"
+  },
+  {
+   "comparison": "Compare actual lake masks and band displacement at matched times.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "10m_wind_speed_and_direction",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "2m_temperature"
+   ],
+   "geometry": {
+    "extent_intent": "Cover upstream air, the whole relevant fetch, shoreline and downwind band corridor.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Cover upstream air, the whole relevant fetch, shoreline and downwind band corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "lake-snow.band",
+   "leaf_id": "lake-snow",
+   "limitations": [
+    "A refined grid with parent-interpolated lake geometry or surface state does not add the missing lake information.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do band location and inland extent change with resolved shoreline detail?",
+   "title": "Shoreline-band detail"
+  },
+  {
+   "comparison": "Use an exact child-grid surface source and document any lake-state interpolation.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "10m_wind_speed_and_direction",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "2m_temperature"
+   ],
+   "geometry": {
+    "extent_intent": "Cover upstream air, the whole relevant fetch, shoreline and downwind band corridor.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Cover upstream air, the whole relevant fetch, shoreline and downwind band corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "lake-snow.replay",
+   "leaf_id": "lake-snow",
+   "limitations": [
+    "A refined grid with parent-interpolated lake geometry or surface state does not add the missing lake information.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does a compact replay preserve the parent band orientation and timing?",
+   "title": "Lake-state controlled replay"
+  },
+  {
+   "comparison": "Compare phase maps with profiles at stable geographic locations.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "2m_relative_humidity",
+    "700mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover cold-air supply, the warm-air intrusion and both sides of the transition boundary.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover cold-air supply, the warm-air intrusion and both sides of the transition boundary. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "ice-transition.thermal",
+   "leaf_id": "ice-transition",
+   "limitations": [
+    "Categorical precipitation type does not calculate ice accretion on roads, trees or wires; shallow layers can remain unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does the transition move as warm air advances above surface cold air?",
+   "title": "Thermal-layer context"
+  },
+  {
+   "comparison": "Compare the same transect and inspect vertical layer representation.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "2m_relative_humidity",
+    "700mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover cold-air supply, the warm-air intrusion and both sides of the transition boundary.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover cold-air supply, the warm-air intrusion and both sides of the transition boundary. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "ice-transition.edge",
+   "leaf_id": "ice-transition",
+   "limitations": [
+    "Categorical precipitation type does not calculate ice accretion on roads, trees or wires; shallow layers can remain unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does finer terrain and horizontal spacing change the transition timing?",
+   "title": "Transition-edge detail"
+  },
+  {
+   "comparison": "Compare parent/child thermodynamic profiles before interpreting phase differences.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "2m_relative_humidity",
+    "700mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover cold-air supply, the warm-air intrusion and both sides of the transition boundary.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover cold-air supply, the warm-air intrusion and both sides of the transition boundary. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "ice-transition.archive",
+   "leaf_id": "ice-transition",
+   "limitations": [
+    "Categorical precipitation type does not calculate ice accretion on roads, trees or wires; shallow layers can remain unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Are shallow cold-layer changes retained in an archived child?",
+   "title": "Mixed-phase replay"
+  },
+  {
+   "comparison": "Compare simultaneous fields and duration rather than separate run maxima.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cyclone pressure gradient, snow shield and the focus area's approach/departure.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 900 km in each horizontal direction. Cover the cyclone pressure gradient, snow shield and the focus area's approach/departure. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 900,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "blizzard.overlap",
+   "leaf_id": "blizzard",
+   "limitations": [
+    "The overlap of modeled snow and wind does not establish blizzard visibility or drifting; no blowing-snow transport model is enabled.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When do snowfall and strong resolved winds coincide over the region?",
+   "title": "Regional snow-wind overlap"
+  },
+  {
+   "comparison": "Compare onset, duration and timing within a fixed child.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cyclone pressure gradient, snow shield and the focus area's approach/departure.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 900 km in each horizontal direction. Cover the cyclone pressure gradient, snow shield and the focus area's approach/departure. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 900,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "blizzard.passage",
+   "leaf_id": "blizzard",
+   "limitations": [
+    "The overlap of modeled snow and wind does not establish blizzard visibility or drifting; no blowing-snow transport model is enabled.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How sharply does the snow-wind overlap change through the peak passage?",
+   "title": "Peak-passage sampling"
+  },
+  {
+   "comparison": "Compare terrain and resolved sustained-wind snapshots with the parent.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "qpf_1h",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cyclone pressure gradient, snow shield and the focus area's approach/departure.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 900 km in each horizontal direction. Cover the cyclone pressure gradient, snow shield and the focus area's approach/departure. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 900,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "blizzard.replay",
+   "leaf_id": "blizzard",
+   "limitations": [
+    "The overlap of modeled snow and wind does not establish blizzard visibility or drifting; no blowing-snow transport model is enabled.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does local refinement alter wind contrasts during the selected snow interval?",
+   "title": "Winter-wind local replay"
+  },
+  {
+   "comparison": "Compare echo tracks and fixed-area rolling totals.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "qpf_1h",
+    "qpf_6h",
+    "total_qpf",
+    "precipitable_water",
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the fixed rainfall target, upstream redevelopment region and moisture inflow.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Include the fixed rainfall target, upstream redevelopment region and moisture inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "rain-training.anchor",
+   "leaf_id": "rain-training",
+   "limitations": [
+    "Rainfall location and amount do not determine runoff or flood depth; a moving child may abandon the accumulation target.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Where does repeated passage produce larger multi-hour rainfall?",
+   "title": "Training-region reference"
+  },
+  {
+   "comparison": "Compare initiation sites and rainfall accumulation over the same target area.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "qpf_1h",
+    "qpf_6h",
+    "total_qpf",
+    "precipitable_water",
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the fixed rainfall target, upstream redevelopment region and moisture inflow.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Include the fixed rainfall target, upstream redevelopment region and moisture inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "rain-training.redevelopment",
+   "leaf_id": "rain-training",
+   "limitations": [
+    "Rainfall location and amount do not determine runoff or flood depth; a moving child may abandon the accumulation target.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Does finer live nesting change upstream redevelopment or cell spacing?",
+   "title": "Fixed redevelopment child"
+  },
+  {
+   "comparison": "Compare area totals and spatial displacement separately against live nesting.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "qpf_1h",
+    "qpf_6h",
+    "total_qpf",
+    "precipitable_water",
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the fixed rainfall target, upstream redevelopment region and moisture inflow.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Include the fixed rainfall target, upstream redevelopment region and moisture inflow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "rain-training.replay",
+   "leaf_id": "rain-training",
+   "limitations": [
+    "Rainfall location and amount do not determine runoff or flood depth; a moving child may abandon the accumulation target.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How much does archived forcing shift a training rainfall maximum?",
+   "title": "Dense-cadence rain replay"
+  },
+  {
+   "comparison": "Compare moisture, low-level flow and regional rainfall onset.",
+   "diagnostics": [
+    "precipitable_water",
+    "850mb_height_winds",
+    "700mb_rh_height_winds",
+    "total_qpf",
+    "qpf_6h",
+    "2m_temperature",
+    "850mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Use an offshore-to-inland region broad enough for the moisture corridor, landfall shift and downstream mountains.",
+    "forecast_hours": 36,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Use an offshore-to-inland region broad enough for the moisture corridor, landfall shift and downstream mountains. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "atmospheric-river.transport",
+   "leaf_id": "atmospheric-river",
+   "limitations": [
+    "Precipitable water is not integrated vapor transport. QPF does not include a routed river or inundation forecast.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How does the offshore moisture corridor approach and shift along the coast?",
+   "title": "Moisture-corridor context"
+  },
+  {
+   "comparison": "Compare upwind, crest and lee area totals through the event.",
+   "diagnostics": [
+    "precipitable_water",
+    "850mb_height_winds",
+    "700mb_rh_height_winds",
+    "total_qpf",
+    "qpf_6h",
+    "2m_temperature",
+    "850mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Use an offshore-to-inland region broad enough for the moisture corridor, landfall shift and downstream mountains.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Use an offshore-to-inland region broad enough for the moisture corridor, landfall shift and downstream mountains. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "atmospheric-river.barrier",
+   "leaf_id": "atmospheric-river",
+   "limitations": [
+    "Precipitable water is not integrated vapor transport. QPF does not include a routed river or inundation forecast.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Where does landfall flow coincide with enhanced terrain precipitation?",
+   "title": "Coastal-barrier precipitation"
+  },
+  {
+   "comparison": "Use exact child surface geography and compare phase and area totals.",
+   "diagnostics": [
+    "precipitable_water",
+    "850mb_height_winds",
+    "700mb_rh_height_winds",
+    "total_qpf",
+    "qpf_6h",
+    "2m_temperature",
+    "850mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Use an offshore-to-inland region broad enough for the moisture corridor, landfall shift and downstream mountains.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Use an offshore-to-inland region broad enough for the moisture corridor, landfall shift and downstream mountains. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "atmospheric-river.replay",
+   "leaf_id": "atmospheric-river",
+   "limitations": [
+    "Precipitable water is not integrated vapor transport. QPF does not include a routed river or inundation forecast.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How does local terrain refinement redistribute rain within a selected peak interval?",
+   "title": "Mountain-interval replay"
+  },
+  {
+   "comparison": "Compare morning moisture with afternoon initiation and evening rain.",
+   "diagnostics": [
+    "precipitable_water",
+    "2m_dewpoint",
+    "sbcape",
+    "composite_reflectivity",
+    "qpf_1h",
+    "total_qpf"
+   ],
+   "geometry": {
+    "extent_intent": "Include moisture inflow, heated terrain and downstream outflow/precipitation areas.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 700 km in each horizontal direction. Include moisture inflow, heated terrain and downstream outflow/precipitation areas. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 700,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "monsoon-rain.cycle",
+   "leaf_id": "monsoon-rain",
+   "limitations": [
+    "One realization does not determine the probability of local rain; terrain and convective initiation remain resolution-sensitive.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does moisture and convection evolve through a full heating cycle?",
+   "title": "Monsoon diurnal cycle"
+  },
+  {
+   "comparison": "Compare initiation sites and outflow-driven secondary echoes.",
+   "diagnostics": [
+    "precipitable_water",
+    "2m_dewpoint",
+    "sbcape",
+    "composite_reflectivity",
+    "qpf_1h",
+    "total_qpf"
+   ],
+   "geometry": {
+    "extent_intent": "Include moisture inflow, heated terrain and downstream outflow/precipitation areas.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 700 km in each horizontal direction. Include moisture inflow, heated terrain and downstream outflow/precipitation areas. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 700,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "monsoon-rain.terrain",
+   "leaf_id": "monsoon-rain",
+   "limitations": [
+    "One realization does not determine the probability of local rain; terrain and convective initiation remain resolution-sensitive.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Where does the finer child initiate convection relative to resolved terrain?",
+   "title": "Terrain initiation detail"
+  },
+  {
+   "comparison": "Compare displaced peaks and fixed-area totals rather than peak amount alone.",
+   "diagnostics": [
+    "precipitable_water",
+    "2m_dewpoint",
+    "sbcape",
+    "composite_reflectivity",
+    "qpf_1h",
+    "total_qpf"
+   ],
+   "geometry": {
+    "extent_intent": "Include moisture inflow, heated terrain and downstream outflow/precipitation areas.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 700 km in each horizontal direction. Include moisture inflow, heated terrain and downstream outflow/precipitation areas. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 700,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "monsoon-rain.replay",
+   "leaf_id": "monsoon-rain",
+   "limitations": [
+    "One realization does not determine the probability of local rain; terrain and convective initiation remain resolution-sensitive.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How much does replaying the afternoon alter rain placement?",
+   "title": "Afternoon archived child"
+  },
+  {
+   "comparison": "Use simultaneous fields, not unrelated minimum/maximum times.",
+   "diagnostics": [
+    "2m_relative_humidity_10m_winds",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "total_qpf"
+   ],
+   "geometry": {
+    "extent_intent": "Include the pressure-gradient flow, terrain channels and the dry-air source.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Include the pressure-gradient flow, terrain channels and the dry-air source. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "fire-drywind.overlap",
+   "leaf_id": "fire-drywind",
+   "limitations": [
+    "Atmospheric dryness and wind do not simulate fuel moisture, ignition, wildfire spread or smoke.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When and where do the lowest RH and strongest winds overlap?",
+   "title": "Regional dry-wind timing"
+  },
+  {
+   "comparison": "Compare actual terrain, wind direction and RH patterns.",
+   "diagnostics": [
+    "2m_relative_humidity_10m_winds",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "total_qpf"
+   ],
+   "geometry": {
+    "extent_intent": "Include the pressure-gradient flow, terrain channels and the dry-air source.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Include the pressure-gradient flow, terrain channels and the dry-air source. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "fire-drywind.terrain",
+   "leaf_id": "fire-drywind",
+   "limitations": [
+    "Atmospheric dryness and wind do not simulate fuel moisture, ignition, wildfire spread or smoke.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Does resolved terrain concentrate wind within the dry-air period?",
+   "title": "Terrain-channel detail"
+  },
+  {
+   "comparison": "Compare time spent in analyst-selected RH/wind bins with the parent.",
+   "diagnostics": [
+    "2m_relative_humidity_10m_winds",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "total_qpf"
+   ],
+   "geometry": {
+    "extent_intent": "Include the pressure-gradient flow, terrain channels and the dry-air source.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Include the pressure-gradient flow, terrain channels and the dry-air source. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "fire-drywind.replay",
+   "leaf_id": "fire-drywind",
+   "limitations": [
+    "Atmospheric dryness and wind do not simulate fuel moisture, ignition, wildfire spread or smoke.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How does local replay change dry-wind duration at the focus area?",
+   "title": "Dry-wind interval replay"
+  },
+  {
+   "comparison": "Separate temperature-driven RH changes from dewpoint changes.",
+   "diagnostics": [
+    "2m_relative_humidity_10m_winds",
+    "2m_dewpoint",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_1h_max"
+   ],
+   "geometry": {
+    "extent_intent": "Include ridge, slope and valley comparison areas plus upstream nocturnal flow.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include ridge, slope and valley comparison areas plus upstream nocturnal flow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "fire-recovery.night",
+   "leaf_id": "fire-recovery",
+   "limitations": [
+    "2 m humidity recovery is not measured fuel-moisture recovery; unresolved shelter and slope exposure can matter.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How much does RH recover through the night as air cools and moisture changes?",
+   "title": "Sunset-to-sunrise reference"
+  },
+  {
+   "comparison": "Compare same-elevation or documented terrain groups at matched times.",
+   "diagnostics": [
+    "2m_relative_humidity_10m_winds",
+    "2m_dewpoint",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_1h_max"
+   ],
+   "geometry": {
+    "extent_intent": "Include ridge, slope and valley comparison areas plus upstream nocturnal flow.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include ridge, slope and valley comparison areas plus upstream nocturnal flow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "fire-recovery.slope",
+   "leaf_id": "fire-recovery",
+   "limitations": [
+    "2 m humidity recovery is not measured fuel-moisture recovery; unresolved shelter and slope exposure can matter.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Do ridge and valley areas recover differently under persistent flow?",
+   "title": "Ridge-valley recovery"
+  },
+  {
+   "comparison": "Compare fixed-area RH/dewpoint sequences and the surface-state provenance.",
+   "diagnostics": [
+    "2m_relative_humidity_10m_winds",
+    "2m_dewpoint",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_1h_max"
+   ],
+   "geometry": {
+    "extent_intent": "Include ridge, slope and valley comparison areas plus upstream nocturnal flow.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include ridge, slope and valley comparison areas plus upstream nocturnal flow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "fire-recovery.replay",
+   "leaf_id": "fire-recovery",
+   "limitations": [
+    "2 m humidity recovery is not measured fuel-moisture recovery; unresolved shelter and slope exposure can matter.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does finer local geography change recovery timing and morning drying?",
+   "title": "Nocturnal terrain replay"
+  },
+  {
+   "comparison": "Compare the environment before storm modification and later surface rainfall.",
+   "diagnostics": [
+    "total_qpf",
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "var:wrf_lapse_rate_0_3km",
+    "2m_temperature",
+    "10m_wind_run_max"
+   ],
+   "geometry": {
+    "extent_intent": "Cover convective source terrain, the dry low-level environment and potential outflow travel.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Cover convective source terrain, the dry low-level environment and potential outflow travel. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "fire-dry-convection.environment",
+   "leaf_id": "fire-dry-convection",
+   "limitations": [
+    "No lightning or ignition model is enabled; low QPF alone does not prove dry lightning or a fuel response.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Where do dry low levels and convective instability overlap?",
+   "title": "Dry-layer environment"
+  },
+  {
+   "comparison": "Compare simultaneous echo, rainfall and resolved-wind timing.",
+   "diagnostics": [
+    "total_qpf",
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "var:wrf_lapse_rate_0_3km",
+    "2m_temperature",
+    "10m_wind_run_max"
+   ],
+   "geometry": {
+    "extent_intent": "Cover convective source terrain, the dry low-level environment and potential outflow travel.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Cover convective source terrain, the dry low-level environment and potential outflow travel. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "fire-dry-convection.outflow",
+   "leaf_id": "fire-dry-convection",
+   "limitations": [
+    "No lightning or ignition model is enabled; low QPF alone does not prove dry lightning or a fuel response.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "Do resolved surface-wind increases occur where convective rain reaches the surface weakly?",
+   "title": "Outflow-pulse detail"
+  },
+  {
+   "comparison": "Compare wetting-pattern displacement and resolved-wind increases against live nesting.",
+   "diagnostics": [
+    "total_qpf",
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "var:wrf_lapse_rate_0_3km",
+    "2m_temperature",
+    "10m_wind_run_max"
+   ],
+   "geometry": {
+    "extent_intent": "Cover convective source terrain, the dry low-level environment and potential outflow travel.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Cover convective source terrain, the dry low-level environment and potential outflow travel. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "fire-dry-convection.replay",
+   "leaf_id": "fire-dry-convection",
+   "limitations": [
+    "No lightning or ignition model is enabled; low QPF alone does not prove dry lightning or a fuel response.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How much does a short replay alter surface rain and outflow placement?",
+   "title": "Short dry-storm replay"
+  },
+  {
+   "comparison": "Compare pressure gradients and resolved flow with maxima of saved 10 m wind snapshots.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "850mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the controlling high/low pressure features and enough upstream fetch for surface adjustment.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Include the controlling high/low pressure features and enough upstream fetch for surface adjustment. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "synoptic-gust.gradient",
+   "leaf_id": "synoptic-gust",
+   "limitations": [
+    "Grid-scale sustained wind and parameterized gusts differ; neither resolves flow around individual structures.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How do regional surface winds evolve as the pressure pattern changes?",
+   "title": "Broad pressure-gradient run"
+  },
+  {
+   "comparison": "Compare passage time and the duration of stronger resolved winds across the fixed child.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "850mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the controlling high/low pressure features and enough upstream fetch for surface adjustment.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Include the controlling high/low pressure features and enough upstream fetch for surface adjustment. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "synoptic-gust.front",
+   "leaf_id": "synoptic-gust",
+   "limitations": [
+    "Grid-scale sustained wind and parameterized gusts differ; neither resolves flow around individual structures.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do wind direction and resolved-wind timing change during frontal passage?",
+   "title": "Frontal-gust child"
+  },
+  {
+   "comparison": "Compare terrain and area wind distributions, not a single maximum cell.",
+   "diagnostics": [
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "850mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include the controlling high/low pressure features and enough upstream fetch for surface adjustment.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Include the controlling high/low pressure features and enough upstream fetch for surface adjustment. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "synoptic-gust.replay",
+   "leaf_id": "synoptic-gust",
+   "limitations": [
+    "Grid-scale sustained wind and parameterized gusts differ; neither resolves flow around individual structures.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does local refinement alter terrain-related wind contrasts during peak flow?",
+   "title": "Local wind exposure replay"
+  },
+  {
+   "comparison": "Compare vertical profiles through evening, overnight and morning.",
+   "diagnostics": [
+    "850mb_height_winds",
+    "bulk_shear_0_1km",
+    "10m_wind_speed_and_direction",
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the jet corridor, moisture inflow and representative surface regions.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Cover the jet corridor, moisture inflow and representative surface regions. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "lowlevel-jet.night",
+   "leaf_id": "lowlevel-jet",
+   "limitations": [
+    "Layer shear and a pressure-level map do not locate a shallow jet precisely; vertical spacing and surface physics require review.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "When does lower-level flow strengthen relative to surface wind?",
+   "title": "Evening-to-morning corridor"
+  },
+  {
+   "comparison": "Compare profile wind maxima and resolved 10 m winds at matched locations.",
+   "diagnostics": [
+    "850mb_height_winds",
+    "bulk_shear_0_1km",
+    "10m_wind_speed_and_direction",
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the jet corridor, moisture inflow and representative surface regions.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Cover the jet corridor, moisture inflow and representative surface regions. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "lowlevel-jet.coupling",
+   "leaf_id": "lowlevel-jet",
+   "limitations": [
+    "Layer shear and a pressure-level map do not locate a shallow jet precisely; vertical spacing and surface physics require review.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does surface wind change as the nocturnal structure evolves into morning?",
+   "title": "Morning surface coupling"
+  },
+  {
+   "comparison": "Check vertical-profile agreement before interpreting local wind differences.",
+   "diagnostics": [
+    "850mb_height_winds",
+    "bulk_shear_0_1km",
+    "10m_wind_speed_and_direction",
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the jet corridor, moisture inflow and representative surface regions.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1000 km in each horizontal direction. Cover the jet corridor, moisture inflow and representative surface regions. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1000,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "lowlevel-jet.replay",
+   "leaf_id": "lowlevel-jet",
+   "limitations": [
+    "Layer shear and a pressure-level map do not locate a shallow jet precisely; vertical spacing and surface physics require review.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does a local replay retain the parent jet timing and surface decoupling?",
+   "title": "Focused jet-profile replay"
+  },
+  {
+   "comparison": "Compare the pre-storm temperature/moisture environment with later cold/wind/pressure changes; assess downdraft parcel energy separately.",
+   "diagnostics": [
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "composite_reflectivity",
+    "10m_wind_run_max",
+    "10m_wind_1h_max",
+    "2m_temperature_10m_winds",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cell, its dry/wet surrounding environment and the expected outflow footprint.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Cover the cell, its dry/wet surrounding environment and the expected outflow footprint. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "downburst.environment",
+   "leaf_id": "downburst",
+   "limitations": [
+    "DCAPE is an environmental diagnostic, not a realized downdraft speed; these grids may not resolve individual microbursts.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Which storm environments precede larger modeled outflow pulses?",
+   "title": "Downdraft context"
+  },
+  {
+   "comparison": "Compare simultaneous fields and pulse timing rather than separate run maxima.",
+   "diagnostics": [
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "composite_reflectivity",
+    "10m_wind_run_max",
+    "10m_wind_1h_max",
+    "2m_temperature_10m_winds",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cell, its dry/wet surrounding environment and the expected outflow footprint.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Cover the cell, its dry/wet surrounding environment and the expected outflow footprint. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "downburst.pulse",
+   "leaf_id": "downburst",
+   "limitations": [
+    "DCAPE is an environmental diagnostic, not a realized downdraft speed; these grids may not resolve individual microbursts.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do surface cooling, pressure and resolved-wind signals evolve around one storm?",
+   "title": "Short pulse detail"
+  },
+  {
+   "comparison": "Compare placement and duration with a live fine-child reference.",
+   "diagnostics": [
+    "2m_dewpoint",
+    "700mb_rh_height_winds",
+    "composite_reflectivity",
+    "10m_wind_run_max",
+    "10m_wind_1h_max",
+    "2m_temperature_10m_winds",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cell, its dry/wet surrounding environment and the expected outflow footprint.",
+    "forecast_hours": 3,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Cover the cell, its dry/wet surrounding environment and the expected outflow footprint. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "downburst.replay",
+   "leaf_id": "downburst",
+   "limitations": [
+    "DCAPE is an environmental diagnostic, not a realized downdraft speed; these grids may not resolve individual microbursts.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How sensitive is one outflow footprint to offline boundary forcing?",
+   "title": "Outflow archived replay"
+  },
+  {
+   "comparison": "Compare temperature, dewpoint and separate daytime/nighttime extrema.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "2m_temp_0_24h_max",
+    "2m_temp_0_24h_min"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the warm air mass and coastal/terrain contrasts relevant to the comparison.",
+    "forecast_hours": 24,
+    "history_interval_s": 1800,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Cover the warm air mass and coastal/terrain contrasts relevant to the comparison. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "heat-humidity.daynight",
+   "leaf_id": "heat-humidity",
+   "limitations": [
+    "Heat index and wet-bulb temperature describe different quantities; neither is a complete personal exposure or health-impact model.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "Where do daytime warmth and elevated overnight minima occur together?",
+   "title": "Day and night reference"
+  },
+  {
+   "comparison": "Compare temperature/dewpoint as well as index maps at identical times.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "2m_temp_0_24h_max",
+    "2m_temp_0_24h_min"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the warm air mass and coastal/terrain contrasts relevant to the comparison.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Cover the warm air mass and coastal/terrain contrasts relevant to the comparison. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "heat-humidity.humidity",
+   "leaf_id": "heat-humidity",
+   "limitations": [
+    "Heat index and wet-bulb temperature describe different quantities; neither is a complete personal exposure or health-impact model.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does resolved geography alter the relative contributions of heat and humidity?",
+   "title": "Humid-heat local contrast"
+  },
+  {
+   "comparison": "Compare consecutive complete 24-hour windows with the same domain.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "2m_temp_0_24h_max",
+    "2m_temp_0_24h_min"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the warm air mass and coastal/terrain contrasts relevant to the comparison.",
+    "forecast_hours": 48,
+    "history_interval_s": 1800,
+    "minimum_domain_span_km": "Proposed root planning minimum 800 km in each horizontal direction. Cover the warm air mass and coastal/terrain contrasts relevant to the comparison. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 800,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "heat-humidity.persistence",
+   "leaf_id": "heat-humidity",
+   "limitations": [
+    "Heat index and wet-bulb temperature describe different quantities; neither is a complete personal exposure or health-impact model.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "Does a second night cool differently under persistent warm conditions?",
+   "title": "Two-day persistence"
+  },
+  {
+   "comparison": "Compare lower-tropospheric cooling with 2 m temperature.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cold-air source, front and downstream focus region.",
+    "forecast_hours": 36,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the cold-air source, front and downstream focus region. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "cold-advection.airmass",
+   "leaf_id": "cold-advection",
+   "limitations": [
+    "Wind chill has a defined applicability and is not object temperature; shelter and local surface effects remain unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How does the regional cold air advance and persist after frontal passage?",
+   "title": "Cold-air mass evolution"
+  },
+  {
+   "comparison": "Compare onset timing and wind/temperature co-evolution across the child.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cold-air source, front and downstream focus region.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the cold-air source, front and downstream focus region. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "cold-advection.arrival",
+   "leaf_id": "cold-advection",
+   "limitations": [
+    "Wind chill has a defined applicability and is not object temperature; shelter and local surface effects remain unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "How rapidly do temperature and wind change at the local front passage?",
+   "title": "Frontal arrival detail"
+  },
+  {
+   "comparison": "Separate advection-period cooling from the following nighttime change.",
+   "diagnostics": [
+    "2m_temperature",
+    "850mb_temperature_height_winds",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cold-air source, front and downstream focus region.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 1200 km in each horizontal direction. Cover the cold-air source, front and downstream focus region. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 1200,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "cold-advection.night",
+   "leaf_id": "cold-advection",
+   "limitations": [
+    "Wind chill has a defined applicability and is not object temperature; shelter and local surface effects remain unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How much additional cooling occurs after the first post-front sunset?",
+   "title": "Post-front first night"
+  },
+  {
+   "comparison": "Compare cooling with cloud, dewpoint and surface wind through the night.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels",
+    "2m_temp_0_24h_min"
+   ],
+   "geometry": {
+    "extent_intent": "Include representative open, ridge and valley areas plus upstream low-level flow.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include representative open, ridge and valley areas plus upstream low-level flow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "radiation-frost.night",
+   "leaf_id": "radiation-frost",
+   "limitations": [
+    "2 m temperature is not crop, leaf or surface temperature; frost deposition, irrigation and shelter are not resolved by this mode.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "Where does the source produce strongest nighttime air-temperature cooling?",
+   "title": "Clear-night reference"
+  },
+  {
+   "comparison": "Compare fixed terrain groups and record the actual model elevation.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels",
+    "2m_temp_0_24h_min"
+   ],
+   "geometry": {
+    "extent_intent": "Include representative open, ridge and valley areas plus upstream low-level flow.",
+    "forecast_hours": 24,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include representative open, ridge and valley areas plus upstream low-level flow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "radiation-frost.valley",
+   "leaf_id": "radiation-frost",
+   "limitations": [
+    "2 m temperature is not crop, leaf or surface temperature; frost deposition, irrigation and shelter are not resolved by this mode.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Do resolved valley and ridge areas cool at different rates?",
+   "title": "Terrain cooling contrasts"
+  },
+  {
+   "comparison": "Start before the minimum and compare temperature tendency across terrain.",
+   "diagnostics": [
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Include representative open, ridge and valley areas plus upstream low-level flow.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include representative open, ridge and valley areas plus upstream low-level flow. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "radiation-frost.dawn",
+   "leaf_id": "radiation-frost",
+   "limitations": [
+    "2 m temperature is not crop, leaf or surface temperature; frost deposition, irrigation and shelter are not resolved by this mode.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "Products requiring a 24-hour window remain unavailable until the run/history contains that complete window."
+   ],
+   "method": "nested",
+   "research_question": "When does local cooling stop and morning warming begin?",
+   "title": "Dawn-transition detail"
+  },
+  {
+   "comparison": "Compare moisture, temperature and low cloud through the same night.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction"
+   ],
+   "geometry": {
+    "extent_intent": "Include the cooling basin and nearby higher or windier comparison areas.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include the cooling basin and nearby higher or windier comparison areas. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "radiation-fog.overnight",
+   "leaf_id": "radiation-fog",
+   "limitations": [
+    "Near-surface saturation alone does not prove fog or visibility; shallow fog depends on vertical resolution and surface physics.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When does the surface approach saturation as cooling proceeds?",
+   "title": "Overnight fog environment"
+  },
+  {
+   "comparison": "Compare near-surface saturation and low-cloud diagnostics together; assess visibility separately.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction"
+   ],
+   "geometry": {
+    "extent_intent": "Include the cooling basin and nearby higher or windier comparison areas.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include the cooling basin and nearby higher or windier comparison areas. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "radiation-fog.dawn",
+   "leaf_id": "radiation-fog",
+   "limitations": [
+    "Near-surface saturation alone does not prove fog or visibility; shallow fog depends on vertical resolution and surface physics.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does the finer child change the time or spatial pattern of low-cloud retreat?",
+   "title": "Dawn dissipation child"
+  },
+  {
+   "comparison": "Compare nighttime formation and morning dissipation without changing source.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_temperature",
+    "2m_dewpoint",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction"
+   ],
+   "geometry": {
+    "extent_intent": "Include the cooling basin and nearby higher or windier comparison areas.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include the cooling basin and nearby higher or windier comparison areas. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "radiation-fog.cycle",
+   "leaf_id": "radiation-fog",
+   "limitations": [
+    "Near-surface saturation alone does not prove fog or visibility; shallow fog depends on vertical resolution and surface physics.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How do formation and breakup relate to the full daily cloud/wind cycle?",
+   "title": "Complete fog-cycle reference"
+  },
+  {
+   "comparison": "Compare flow and dewpoint/temperature contrast before low cloud arrives.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_dewpoint",
+    "2m_temperature",
+    "10m_wind_speed_and_direction",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cold surface, upstream moist-air supply and downstream fog corridor.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Cover the cold surface, upstream moist-air supply and downstream fog corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "advection-fog.supply",
+   "leaf_id": "advection-fog",
+   "limitations": [
+    "Coarse or interpolated surface temperature can dominate the answer; this is not a certified ceiling/visibility forecast.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How does the source bring moist air across the colder surface?",
+   "title": "Moist-air supply context"
+  },
+  {
+   "comparison": "Compare actual diagnostic arrival with saturation proxies.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_dewpoint",
+    "2m_temperature",
+    "10m_wind_speed_and_direction",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cold surface, upstream moist-air supply and downstream fog corridor.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Cover the cold surface, upstream moist-air supply and downstream fog corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "advection-fog.arrival",
+   "leaf_id": "advection-fog",
+   "limitations": [
+    "Coarse or interpolated surface temperature can dominate the answer; this is not a certified ceiling/visibility forecast.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When does the modeled low-cloud boundary reach the focus region?",
+   "title": "Fixed fog-arrival child"
+  },
+  {
+   "comparison": "Compare the prepared surface mask and penetration distance.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_dewpoint",
+    "2m_temperature",
+    "10m_wind_speed_and_direction",
+    "mslp_10m_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the cold surface, upstream moist-air supply and downstream fog corridor.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 500 km in each horizontal direction. Cover the cold surface, upstream moist-air supply and downstream fog corridor. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 500,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "advection-fog.coast",
+   "leaf_id": "advection-fog",
+   "limitations": [
+    "Coarse or interpolated surface temperature can dominate the answer; this is not a certified ceiling/visibility forecast.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does resolved shoreline/terrain alter the inland edge of low cloud?",
+   "title": "Shoreline penetration detail"
+  },
+  {
+   "comparison": "Compare full profiles with the 0–1 km diagnostic at fixed locations.",
+   "diagnostics": [
+    "bulk_shear_0_1km",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the low-level flow corridor and terrain/cloud transitions relevant to the profiles.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover the low-level flow corridor and terrain/cloud transitions relevant to the profiles. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [],
+    "preferred_finest_dx_km": 12,
+    "root_dx_km": 12
+   },
+   "id": "aviation-shear.profiles",
+   "leaf_id": "aviation-shear",
+   "limitations": [
+    "Bulk layer shear is not runway-specific wind shear, turbulence intensity, icing or a flight-clearance product.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "regional",
+   "research_question": "How do surface winds differ from winds above the nocturnal layer?",
+   "title": "Nighttime profile context"
+  },
+  {
+   "comparison": "Compare wind-profile changes with surface wind and cloud evolution.",
+   "diagnostics": [
+    "bulk_shear_0_1km",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the low-level flow corridor and terrain/cloud transitions relevant to the profiles.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover the low-level flow corridor and terrain/cloud transitions relevant to the profiles. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "aviation-shear.transition",
+   "leaf_id": "aviation-shear",
+   "limitations": [
+    "Bulk layer shear is not runway-specific wind shear, turbulence intensity, icing or a flight-clearance product.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How rapidly does the lower-level shear pattern evolve after sunrise?",
+   "title": "Morning shear transition"
+  },
+  {
+   "comparison": "Compare model elevations and profiles across ridge/valley or coastal sites.",
+   "diagnostics": [
+    "bulk_shear_0_1km",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "cloud_cover_levels"
+   ],
+   "geometry": {
+    "extent_intent": "Cover the low-level flow corridor and terrain/cloud transitions relevant to the profiles.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover the low-level flow corridor and terrain/cloud transitions relevant to the profiles. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "aviation-shear.terrain",
+   "leaf_id": "aviation-shear",
+   "limitations": [
+    "Bulk layer shear is not runway-specific wind shear, turbulence intensity, icing or a flight-clearance product.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does resolved terrain alter local low-level wind contrasts?",
+   "title": "Terrain-modified shear"
+  },
+  {
+   "comparison": "Compare fixed slope/crest/lee areas and precipitation phase.",
+   "diagnostics": [
+    "terrain_height",
+    "700mb_rh_height_winds",
+    "850mb_height_winds",
+    "total_qpf",
+    "2m_temperature",
+    "850mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover upstream slope, crest, lee and the moisture-bearing flow approaching the barrier.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover upstream slope, crest, lee and the moisture-bearing flow approaching the barrier. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "orographic-rain.barrier",
+   "leaf_id": "orographic-rain",
+   "limitations": [
+    "Finer numerical spacing does not supply finer terrain or guarantee a better precipitation distribution; phase and snow accumulation are separate.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do windward and lee totals differ as the flow changes?",
+   "title": "Barrier-scale reference"
+  },
+  {
+   "comparison": "Compare actual prepared terrain and area totals against the parent.",
+   "diagnostics": [
+    "terrain_height",
+    "700mb_rh_height_winds",
+    "850mb_height_winds",
+    "total_qpf",
+    "2m_temperature",
+    "850mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover upstream slope, crest, lee and the moisture-bearing flow approaching the barrier.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover upstream slope, crest, lee and the moisture-bearing flow approaching the barrier. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "orographic-rain.ridge",
+   "leaf_id": "orographic-rain",
+   "limitations": [
+    "Finer numerical spacing does not supply finer terrain or guarantee a better precipitation distribution; phase and snow accumulation are separate.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does finer terrain shift the placement of precipitation relative to the ridge?",
+   "title": "Ridge precipitation detail"
+  },
+  {
+   "comparison": "Hold parent archive and physics evidence fixed and document surface provenance.",
+   "diagnostics": [
+    "terrain_height",
+    "700mb_rh_height_winds",
+    "850mb_height_winds",
+    "total_qpf",
+    "2m_temperature",
+    "850mb_temperature_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Cover upstream slope, crest, lee and the moisture-bearing flow approaching the barrier.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 600 km in each horizontal direction. Cover upstream slope, crest, lee and the moisture-bearing flow approaching the barrier. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 600,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "orographic-rain.replay",
+   "leaf_id": "orographic-rain",
+   "limitations": [
+    "Finer numerical spacing does not supply finer terrain or guarantee a better precipitation distribution; phase and snow accumulation are separate.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How does a replay with exact child-grid terrain redistribute the peak interval?",
+   "title": "Exact-terrain replay"
+  },
+  {
+   "comparison": "Compare profiles and simultaneous wind/temperature changes across the ridge.",
+   "diagnostics": [
+    "terrain_height",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "700mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include a broad upstream column, windward slope, crest and enough lee distance for adjustment.",
+    "forecast_hours": 12,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include a broad upstream column, windward slope, crest and enough lee distance for adjustment. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "downslope-flow.crossbarrier",
+   "leaf_id": "downslope-flow",
+   "limitations": [
+    "A surface gust map does not prove resolved mountain-wave structure; wave/rotor analysis requires vertical output and adequate resolution.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Which upstream flow and stability changes accompany lee warming and drying?",
+   "title": "Cross-barrier environment"
+  },
+  {
+   "comparison": "Compare ridge representation and fixed-area flow with the parent.",
+   "diagnostics": [
+    "terrain_height",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "700mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include a broad upstream column, windward slope, crest and enough lee distance for adjustment.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include a broad upstream column, windward slope, crest and enough lee distance for adjustment. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "downslope-flow.lee",
+   "leaf_id": "downslope-flow",
+   "limitations": [
+    "A surface gust map does not prove resolved mountain-wave structure; wave/rotor analysis requires vertical output and adequate resolution.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does finer terrain change the local extent of strong wind and warming?",
+   "title": "Fixed lee-side child"
+  },
+  {
+   "comparison": "Compare upstream profile forcing before assessing differences in resolved surface winds.",
+   "diagnostics": [
+    "terrain_height",
+    "10m_wind_speed_and_direction",
+    "10m_wind_run_max",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "700mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include a broad upstream column, windward slope, crest and enough lee distance for adjustment.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include a broad upstream column, windward slope, crest and enough lee distance for adjustment. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "downslope-flow.replay",
+   "leaf_id": "downslope-flow",
+   "limitations": [
+    "A surface gust map does not prove resolved mountain-wave structure; wave/rotor analysis requires vertical output and adequate resolution.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does the archived child reproduce the episode timing and broad lee response?",
+   "title": "Downslope episode replay"
+  },
+  {
+   "comparison": "Compare valley/ridge profiles and fixed-area surface temperatures.",
+   "diagnostics": [
+    "terrain_height",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "var:wrf_lapse_rate_0_3km"
+   ],
+   "geometry": {
+    "extent_intent": "Include the full basin, neighboring ridges and pathways for cold-air drainage and ventilation.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include the full basin, neighboring ridges and pathways for cold-air drainage and ventilation. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "valley-coldpool.formation",
+   "leaf_id": "valley-coldpool",
+   "limitations": [
+    "A shallow valley inversion can be poorly represented even on a fine horizontal grid; surface and vertical resolution require separate review.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Where does valley air cool relative to surrounding terrain overnight?",
+   "title": "One-night basin context"
+  },
+  {
+   "comparison": "Compare profile inversion strength with temperature and wind changes.",
+   "diagnostics": [
+    "terrain_height",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "var:wrf_lapse_rate_0_3km"
+   ],
+   "geometry": {
+    "extent_intent": "Include the full basin, neighboring ridges and pathways for cold-air drainage and ventilation.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include the full basin, neighboring ridges and pathways for cold-air drainage and ventilation. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "valley-coldpool.erosion",
+   "leaf_id": "valley-coldpool",
+   "limitations": [
+    "A shallow valley inversion can be poorly represented even on a fine horizontal grid; surface and vertical resolution require separate review.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When and where does the cold pool erode as mixing or external flow develops?",
+   "title": "Morning erosion detail"
+  },
+  {
+   "comparison": "Compare complete daily cycles and document source/surface evolution.",
+   "diagnostics": [
+    "terrain_height",
+    "2m_temperature",
+    "2m_relative_humidity",
+    "10m_wind_speed_and_direction",
+    "var:wrf_lapse_rate_0_3km"
+   ],
+   "geometry": {
+    "extent_intent": "Include the full basin, neighboring ridges and pathways for cold-air drainage and ventilation.",
+    "forecast_hours": 48,
+    "history_interval_s": 1800,
+    "minimum_domain_span_km": "Proposed root planning minimum 250 km in each horizontal direction. Include the full basin, neighboring ridges and pathways for cold-air drainage and ventilation. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 250,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "valley-coldpool.persistence",
+   "leaf_id": "valley-coldpool",
+   "limitations": [
+    "A shallow valley inversion can be poorly represented even on a fine horizontal grid; surface and vertical resolution require separate review.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does the cold pool survive the daytime period and strengthen on a second night?",
+   "title": "Two-night persistence"
+  },
+  {
+   "comparison": "Compare offshore, shoreline and inland conditions through the same day.",
+   "diagnostics": [
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds",
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "terrain_height"
+   ],
+   "geometry": {
+    "extent_intent": "Include offshore water, heated land and sufficient inland distance for frontal movement.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include offshore water, heated land and sufficient inland distance for frontal movement. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "sea-breeze.day",
+   "leaf_id": "sea-breeze",
+   "limitations": [
+    "Selecting a coast does not create a breeze; source flow, coastline geometry and surface temperatures control the experiment.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "When does the coastal wind/temperature contrast develop and weaken?",
+   "title": "Full heating-cycle reference"
+  },
+  {
+   "comparison": "Compare prepared land/sea masks and consistent front-position criteria.",
+   "diagnostics": [
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds",
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "terrain_height"
+   ],
+   "geometry": {
+    "extent_intent": "Include offshore water, heated land and sufficient inland distance for frontal movement.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include offshore water, heated land and sufficient inland distance for frontal movement. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "sea-breeze.front",
+   "leaf_id": "sea-breeze",
+   "limitations": [
+    "Selecting a coast does not create a breeze; source flow, coastline geometry and surface temperatures control the experiment.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does finer shoreline geometry change front position and inland penetration?",
+   "title": "Breeze-front detail"
+  },
+  {
+   "comparison": "Start before sunset and compare the evening transition with the daytime reference.",
+   "diagnostics": [
+    "2m_temperature_10m_winds",
+    "2m_dewpoint_10m_winds",
+    "mslp_10m_winds",
+    "10m_wind_speed_and_direction",
+    "terrain_height"
+   ],
+   "geometry": {
+    "extent_intent": "Include offshore water, heated land and sufficient inland distance for frontal movement.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 300 km in each horizontal direction. Include offshore water, heated land and sufficient inland distance for frontal movement. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 300,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "sea-breeze.return",
+   "leaf_id": "sea-breeze",
+   "limitations": [
+    "Selecting a coast does not create a breeze; source flow, coastline geometry and surface temperatures control the experiment.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How does the shoreline flow change as land cooling begins?",
+   "title": "Evening land-breeze transition"
+  },
+  {
+   "comparison": "Compare boundary timing and first echoes through the heating period.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "2m_dewpoint_10m_winds",
+    "qpf_1h",
+    "precipitable_water",
+    "10m_wind_speed_and_direction"
+   ],
+   "geometry": {
+    "extent_intent": "Include coast, inland boundary interaction area and downstream storm/outflow room.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include coast, inland boundary interaction area and downstream storm/outflow room. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "coastal-convergence.boundary",
+   "leaf_id": "coastal-convergence",
+   "limitations": [
+    "A convergent surface pattern does not ensure convective initiation; tiny boundary errors can shift storm placement.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Where do shoreline and background flow changes precede convection?",
+   "title": "Coastal-boundary context"
+  },
+  {
+   "comparison": "Compare boundary position and storm displacement with the regional reference.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "2m_dewpoint_10m_winds",
+    "qpf_1h",
+    "precipitable_water",
+    "10m_wind_speed_and_direction"
+   ],
+   "geometry": {
+    "extent_intent": "Include coast, inland boundary interaction area and downstream storm/outflow room.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include coast, inland boundary interaction area and downstream storm/outflow room. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "coastal-convergence.collision",
+   "leaf_id": "coastal-convergence",
+   "limitations": [
+    "A convergent surface pattern does not ensure convective initiation; tiny boundary errors can shift storm placement.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does a finer live child alter where interacting boundaries initiate echoes?",
+   "title": "Boundary-interaction child"
+  },
+  {
+   "comparison": "Use an exact child coastline and compare against a live-child control.",
+   "diagnostics": [
+    "composite_reflectivity",
+    "2m_dewpoint_10m_winds",
+    "qpf_1h",
+    "precipitable_water",
+    "10m_wind_speed_and_direction"
+   ],
+   "geometry": {
+    "extent_intent": "Include coast, inland boundary interaction area and downstream storm/outflow room.",
+    "forecast_hours": 6,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include coast, inland boundary interaction area and downstream storm/outflow room. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "coastal-convergence.replay",
+   "leaf_id": "coastal-convergence",
+   "limitations": [
+    "A convergent surface pattern does not ensure convective initiation; tiny boundary errors can shift storm placement.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "How much does archived forcing change the coastal initiation and rainfall pattern?",
+   "title": "Coastal initiation replay"
+  },
+  {
+   "comparison": "Compare arrival and retreat across a complete daily cycle.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_temperature_10m_winds",
+    "850mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include offshore cloud supply, coastal gaps and the inland cloud edge.",
+    "forecast_hours": 24,
+    "history_interval_s": 900,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include offshore cloud supply, coastal gaps and the inland cloud edge. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 4,
+    "root_dx_km": 12
+   },
+   "id": "marine-stratus.supply",
+   "leaf_id": "marine-stratus",
+   "limitations": [
+    "Low cloud cover alone is not cloud-base height or flight category; inversion depth and surface state may be unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "How do offshore cloud supply and coastal flow relate to inland low cloud?",
+   "title": "Marine-layer daily context"
+  },
+  {
+   "comparison": "Compare actual terrain and low-cloud edge timing at fixed locations.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_temperature_10m_winds",
+    "850mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include offshore cloud supply, coastal gaps and the inland cloud edge.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include offshore cloud supply, coastal gaps and the inland cloud edge. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3,
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 12
+   },
+   "id": "marine-stratus.inland",
+   "leaf_id": "marine-stratus",
+   "limitations": [
+    "Low cloud cover alone is not cloud-base height or flight category; inversion depth and surface state may be unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run."
+   ],
+   "method": "nested",
+   "research_question": "Does resolved coastal terrain alter cloud penetration through gaps or valleys?",
+   "title": "Inland-edge detail"
+  },
+  {
+   "comparison": "Use exact child surface geography and compare thermodynamic profiles.",
+   "diagnostics": [
+    "low_cloud_cover",
+    "2m_relative_humidity_10m_winds",
+    "2m_temperature_10m_winds",
+    "850mb_height_winds"
+   ],
+   "geometry": {
+    "extent_intent": "Include offshore cloud supply, coastal gaps and the inland cloud edge.",
+    "forecast_hours": 12,
+    "history_interval_s": 300,
+    "minimum_domain_span_km": "Proposed root planning minimum 400 km in each horizontal direction. Include offshore cloud supply, coastal gaps and the inland cloud edge. Increase coverage for the actual case; the minimum is not an accuracy guarantee.",
+    "minimum_root_span_km": 400,
+    "nest_ratios": [
+     3
+    ],
+    "preferred_finest_dx_km": 1.3333333333333333,
+    "root_dx_km": 4
+   },
+   "id": "marine-stratus.replay",
+   "leaf_id": "marine-stratus",
+   "limitations": [
+    "Low cloud cover alone is not cloud-base height or flight category; inversion depth and surface state may be unresolved.",
+    "The stated spacing, span, duration and cadence are proposed experiment settings. Native creation, preparation, memory checks and source-bound execution evidence must qualify the actual run.",
+    "An archived child uses finite-cadence boundary forcing and needs adjustment time. Sequential refinement cannot reconstruct information absent from the parent or substitute for live nesting through convective initiation.",
+    "Only the archived child runs concurrently in this method; archive storage, parent production and child-surface preparation still cost resources."
+   ],
+   "method": "archived_downscale",
+   "research_question": "Does a local replay retain the parent cloud arrival while changing inland extent?",
+   "title": "Marine-layer replay"
+  }
+ ],
+ "families": [
+  {
+   "description": "Build a regional reference, then ask what finer geography or denser sampling changes.",
+   "id": "general",
+   "title": "Everyday forecast"
+  },
+  {
+   "description": "Separate hail growth, hail survival, rotating storms, initiation and long-lived convective wind systems.",
+   "id": "supercell",
+   "title": "Supercells & severe storms"
+  },
+  {
+   "description": "Study an existing cyclone's track, pressure/wind evolution, rainbands and landfall environment.",
+   "id": "tropical",
+   "title": "Hurricanes & tropical weather"
+  },
+  {
+   "description": "Compare documented source scenarios and supported initial-state changes against an unchanged control.",
+   "id": "hypothetical_tropical",
+   "title": "Scenario & hurricane lab"
+  },
+  {
+   "description": "Study snow bands, lake influence, precipitation transitions and concurrent winter wind.",
+   "id": "winter",
+   "title": "Snow, ice & blizzards"
+  },
+  {
+   "description": "Study where atmospheric rainfall accumulates and which transport or convective process sustains it.",
+   "id": "flood",
+   "title": "Heavy rain & flooding"
+  },
+  {
+   "description": "Compare atmospheric drying, wind, overnight recovery and weakly precipitating convection.",
+   "id": "fire",
+   "title": "Fire weather"
+  },
+  {
+   "description": "Distinguish pressure-gradient wind, convective outflow and nighttime low-level flow.",
+   "id": "wind",
+   "title": "Wind & damaging gusts"
+  },
+  {
+   "description": "Study humid heat, cold-air advection and local nocturnal cooling separately.",
+   "id": "temperature",
+   "title": "Heat, cold & frost"
+  },
+  {
+   "description": "Investigate fog regimes and low-level wind structure with explicit history-field requirements.",
+   "id": "aviation",
+   "title": "Clouds, fog & aviation weather"
+  },
+  {
+   "description": "Connect resolved terrain to precipitation, downslope flow and valley cold pools.",
+   "id": "terrain",
+   "title": "Mountains & local terrain"
+  },
+  {
+   "description": "Study shoreline circulations, coastal convergence and marine low cloud.",
+   "id": "coastal",
+   "title": "Coasts & sea breezes"
+  }
+ ]
+}
